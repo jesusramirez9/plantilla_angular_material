@@ -1,0 +1,32 @@
+.buttonSubmit{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3px 16px;
+}
+.loginTitulo{
+    font-size: 1rem;
+}
+.btnOlvidaste{
+    font-size: .8rem;
+    box-shadow: none !important;
+}
+.msgRegistrate{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: .8rem;
+}
+.btnRegistrate{
+    font-size: .8rem;
+    box-shadow: none !important;
+    font-weight: bold;
+}
+.titleLogin{
+    font-size: 1.1rem;
+    font-weight: bolder;
+    line-height: normal;
+}
+.form-control{
+    font-size: .9rem;
+}

@@ -1,0 +1,30 @@
+<mat-card class="example-card shadow-none">
+    <mat-card-content>
+        <h2 class="title-addproduct">Editar un producto</h2>
+        <br>
+        <div class="col-12 col-md-4 mb-5">
+            <mat-form-field appearance="legacy" floatLabel="never" class="select-custom">
+                <mat-select [disableOptionCentering]="true" [(value)]="step">
+                    <mat-option value="1">Características del producto</mat-option>
+                    <mat-option value="2">Imágenes y video</mat-option>
+                    <mat-option value="3">Datos para venta</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+        <!-- Informacion general -->
+        <div class="info-general" [hidden]="step != '1'">
+            <app-product-step1 mode="edit" [idProduct]="idProduct"></app-product-step1>
+        </div>
+
+        <!-- Imagenes y video -->
+        <div class="imagenes-video" [hidden]="step != '2'">
+            <app-product-step2 mode="edit" [idProduct]="idProduct"></app-product-step2>
+        </div>
+
+        <!-- Datos para venta -->
+        <div class="datos-venta" [hidden]="step != '3'">
+            <app-product-step3 mode="edit" [idProduct]="idProduct"></app-product-step3>
+        </div>
+    </mat-card-content>
+</mat-card>

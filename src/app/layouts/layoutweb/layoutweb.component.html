@@ -1,0 +1,103 @@
+<!-- ============================================================== -->
+<!-- Main wrapper - style you can find in pages.scss -->
+<!-- ============================================================== -->
+<div class="main-container">
+    <!-- ============================================================== -->
+    <!-- Topbar - style you can find in header.scss -->
+    <!-- ============================================================== -->
+    <div class="header" [class.scrollHeader]="isSticky">
+        <mat-toolbar class="header-web">
+            <!-- ============================================================== -->
+            <!-- Logo - style you can find in header.scss -->
+            <!-- ============================================================== -->
+            <div class="navbar-header">
+                <a class="navbar-brand py-0" href="javascript:void(0)">
+                    <img src="assets/images/header/logo.png" alt="homepage" class="light-logo">
+                </a>
+            </div>
+            <span fxFlex></span>
+            <div class="d-none d-lg-block">
+                <a class="navbar-brand" routerLink="/home">Inicio</a>
+                <a class="navbar-brand" routerLink="/regalosCorporativos">Regalos Corporativos</a>
+                <a class="navbar-brand" routerLink="">Proyectos HORECA</a>
+                <a class="navbar-brand" routerLink="">Licencias</a>
+                <a class="navbar-brand" routerLink="">Tiendas</a>
+                <a class="navbar-brand" routerLink="/blog">Blog</a>
+            </div>
+            <div class="d-flex align-items-center ms-5 d-none d-md-flex">
+                <a class="navbar-brand me-4" [routerLink]="" *ngIf="!menu_open">
+                    <img src="assets/images/header/icono1.png" class="navbar-brand-img">
+                </a>
+                <a class="navbar-brand me-4" [routerLink]="" *ngIf="!enabledMenu"><img
+                        src="assets/images/header/icono2.png" class="navbar-brand-img"></a>
+                <button class="navbar-brand buttonLogin me-0" (click)="openDialog()" *ngIf="!enabledMenu">
+                    <img src="assets/images/header/icono3.png" class="me-2 navbar-brand-img">
+                    <span class="text-left">Iniciar<br>Sesión</span>
+                </button>
+                
+            </div>
+            <app-header class="" *ngIf="enabledMenu" (logout)="logout()"></app-header>
+            <div class="d-lg-none">
+                <button mat-icon-button (click)="snav.toggle()" value="sidebarclosed" class="text-white" [class.btnClose]="menu_open">
+                    <mat-icon>{{menu_open ? 'close':'menu'}}</mat-icon>
+                </button>
+            </div>
+        </mat-toolbar>
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Topbar - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+
+    <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 0 : 0">
+        <!-- ============================================================== -->
+        <!-- Sidebar - style you can find in sidebar.scss -->
+        <!-- ============================================================== -->
+        <mat-sidenav #snav id="snav" class="dark-sidebar pl-xs" [opened]="false" (closed)="snav.close()" position="end"
+            (openedChange)="statusSidenav($event)">
+            <app-sidebar (closeSidenav)="closeSidenav(snav)"></app-sidebar>
+        </mat-sidenav>
+        <!-- ============================================================== -->
+        <!-- Sidebar - style you can find in sidebar.scss -->
+        <!-- ============================================================== -->
+
+        <!-- ============================================================== -->
+        <!-- Page container - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+        <mat-sidenav-content class="page-wrapper">
+            <div class="page-content1">
+
+                <router-outlet>
+                    <app-spinner></app-spinner>
+                </router-outlet>
+
+            </div>
+            <!-- FORM CONTACT -->
+            <div class="footer-contact">
+                <div class="row col-md-10 col-lg-9 col-xl-7 mx-auto align-items-center">
+                    <div class="col-12 col-md-6 col-lg-7 footer-contact-1">
+                        <p class="mb-0">Suscribete a nuestro boletin de noticias y recibe siempre nuestras últimas
+                            promociones.
+                        </p>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-5">
+                        <div class="input-group footer-contact-group-button">
+                            <div class="form-floating form-floating-custom">
+                                <input type="email" class="form-control" id="floatingInput"
+                                    placeholder="Tu correo electrónico">
+                                <label for="floatingInput">Tu correo electrónico aquí...</label>
+                            </div>
+                            <button class="btn btn-outline-secondary" type="button" id="button-addon2">
+                                <img src="assets/images/home/send.png" alt="Enviar" class="img-fluid">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <app-footer></app-footer>
+        </mat-sidenav-content>
+        <!-- ============================================================== -->
+        <!-- Page container - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+    </mat-sidenav-container>
+
+</div>

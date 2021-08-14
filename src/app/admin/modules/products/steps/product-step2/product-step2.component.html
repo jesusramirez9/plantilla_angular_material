@@ -1,0 +1,207 @@
+<form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+    <div class="py-4">
+        <p class="fw-bolder">Adjuntar imágenes</p>
+        <p>Debe ser un archivo .jpg, .gif o .png de 10MB como máximo y de al menos 400 por 400 píxeles.</p>
+    </div>
+    
+    <div class="row mb-4">
+        <div class="col-12">
+            <label class="fw-bolder mb-3">Imagen principal:</label>
+        </div>
+        <div class="col-md-6 row mx-0">
+            <div class="col-auto" *ngIf="mode == 'edit' && imagen1_aux != '0'">
+                <div class="img-preview mx-auto mb-2"
+                    [style.backgroundImage]="'url('+imagen1_aux+')'">
+                </div>
+                <!-- <button mat-raised-button color="accent">Eliminar archivo</button> -->
+            </div>
+            <div class="col-auto">
+                <label class="text-decoration-underline fw-bold" *ngIf="mode == 'edit'">Reemplazar imagen</label>
+                <app-input-file (changeImage)="changeImagen($event, 'imagenPrincipal')" nameInput="imagenPrincipal"
+                (deleteImage)="deleteImagen($event, 'imagenPrincipal')" [isEmpty]="imagenPrincipal"></app-input-file>
+            </div>
+        </div>
+        <span class="text-muted font-14 mt-2" *ngIf="mode != 'edit'">(*) Ésta imagen es la que se verá al inicio y será la imagen
+            principal del producto.</span>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <p class="fw-bolder mb-3 pt-4">Imágenes secundarias:</p>
+        </div>
+        <div class="col-md-6 row mx-0 mb-4">
+            <div class="col-auto" *ngIf="mode == 'edit' && imagen2_aux != '0'">
+                <div class="img-preview mx-auto mb-2" [style.backgroundImage]="'url('+imagen2_aux+')'">
+                </div>
+                <!-- <button mat-raised-button color="accent">Eliminar archivo</button> -->
+            </div>
+            <div class="col-auto">
+                <label class="text-decoration-underline fw-bold" *ngIf="mode == 'edit'">Reemplazar imagen</label>
+                <app-input-file (changeImage)="changeImagen($event, 'imagen1')" nameInput="imagen1"
+                (deleteImage)="deleteImagen($event, 'imagen1')"></app-input-file>
+            </div>
+        </div>
+        <div class="col-md-6 row mx-0 mb-4">
+            <div class="col-auto" *ngIf="mode == 'edit' && imagen3_aux != '0'">
+                <div class="img-preview mx-auto mb-2" [style.backgroundImage]="'url('+imagen3_aux+')'">
+                </div>
+                <button mat-raised-button color="accent" (click)="eliminarImagenAnterior(3)">Eliminar archivo</button>
+            </div>
+            <div class="col-auto">
+                <label class="text-decoration-underline fw-bold" *ngIf="mode == 'edit'">Reemplazar imagen</label>
+                <app-input-file (changeImage)="changeImagen($event, 'imagen2')" nameInput="imagen2"
+                (deleteImage)="deleteImagen($event, 'imagen2')"></app-input-file>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 mb-4 row mx-0">
+            <div class="col-auto" *ngIf="mode == 'edit' && imagen4_aux != '0'">
+                <div class="img-preview mx-auto mb-2" [style.backgroundImage]="'url('+imagen4_aux+')'">
+                </div>
+                <button mat-raised-button color="accent" (click)="eliminarImagenAnterior(4)">Eliminar archivo</button>
+            </div>
+            <div class="col-auto">
+                <label class="text-decoration-underline fw-bold" *ngIf="mode == 'edit'">Reemplazar imagen</label>
+                <app-input-file (changeImage)="changeImagen($event, 'imagen3')" nameInput="imagen3"
+                (deleteImage)="deleteImagen($event, 'imagen3')"></app-input-file>
+            </div>
+        </div>
+        <div class="col-md-6 mb-4 row mx-0">
+            <div class="col-auto" *ngIf="mode == 'edit' && imagen5_aux != '0'">
+                <div class="img-preview mx-auto mb-2" [style.backgroundImage]="'url('+imagen5_aux+')'">
+                </div>
+                <button mat-raised-button color="accent" (click)="eliminarImagenAnterior(5)">Eliminar archivo</button>
+            </div>
+            <div class="col-auto">
+                <label class="text-decoration-underline fw-bold" *ngIf="mode == 'edit'">Reemplazar imagen</label>
+                <app-input-file (changeImage)="changeImagen($event, 'imagen4')" nameInput="imagen4"
+                (deleteImage)="deleteImagen($event, 'imagen4')"></app-input-file>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 mb-4 row mx-0">
+            <div class="col-auto" *ngIf="mode == 'edit' && imagen6_aux != '0'">
+                <div class="img-preview mx-auto mb-2" [style.backgroundImage]="'url('+imagen6_aux+')'">
+                </div>
+                <button mat-raised-button color="accent" (click)="eliminarImagenAnterior(6)">Eliminar archivo</button>
+            </div>
+            <div class="col-auto">
+                <label class="text-decoration-underline fw-bold" *ngIf="mode == 'edit'">Reemplazar imagen</label>
+                <app-input-file (changeImage)="changeImagen($event, 'imagen5')" nameInput="imagen5"
+                (deleteImage)="deleteImagen($event, 'imagen5')"></app-input-file>
+            </div>
+        </div>
+        <div class="col-md-6 mb-4 row mx-0">
+            <div class="col-auto" *ngIf="mode == 'edit' && imagen7_aux != '0'">
+                <div class="img-preview mx-auto mb-2" [style.backgroundImage]="'url('+imagen7_aux+')'">
+                </div>
+                <button mat-raised-button color="accent" (click)="eliminarImagenAnterior(7)">Eliminar archivo</button>
+            </div>
+            <div class="col-auto">
+                <label class="text-decoration-underline fw-bold" *ngIf="mode == 'edit'">Reemplazar imagen</label>
+                <app-input-file (changeImage)="changeImagen($event, 'imagen6')" nameInput="imagen6"
+                (deleteImage)="deleteImagen($event, 'imagen6')"></app-input-file>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 mb-4 row mx-0">
+            <div class="col-auto" *ngIf="mode == 'edit' && imagen8_aux != '0'">
+                <div class="img-preview mx-auto mb-2" [style.backgroundImage]="'url('+imagen8_aux+')'">
+                </div>
+                <button mat-raised-button color="accent" (click)="eliminarImagenAnterior(8)">Eliminar archivo</button>
+            </div>
+            <div class="col-auto">
+                <label class="text-decoration-underline fw-bold" *ngIf="mode == 'edit'">Reemplazar imagen</label>
+                <app-input-file (changeImage)="changeImagen($event, 'imagen7')" nameInput="imagen7"
+                (deleteImage)="deleteImagen($event, 'imagen7')"></app-input-file>
+            </div>
+        </div>
+        <div class="col-md-6 mb-4 row mx-0">
+            <div class="col-auto" *ngIf="mode == 'edit' && imagen9_aux != '0'">
+                <div class="img-preview mx-auto mb-2" [style.backgroundImage]="'url('+imagen9_aux+')'">
+                </div>
+                <button mat-raised-button color="accent" (click)="eliminarImagenAnterior(9)">Eliminar archivo</button>
+            </div>
+            <div class="col-auto">
+                <label class="text-decoration-underline fw-bold" *ngIf="mode == 'edit'">Reemplazar imagen</label>
+                <app-input-file (changeImage)="changeImagen($event, 'imagen8')" nameInput="imagen8"
+                (deleteImage)="deleteImagen($event, 'imagen8')"></app-input-file>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 mb-4 row mx-0">
+            <div class="col-auto" *ngIf="mode == 'edit' && imagen10_aux != '0'">
+                <div class="img-preview mx-auto mb-2" [style.backgroundImage]="'url('+imagen10_aux+')'">
+                </div>
+                <button mat-raised-button color="accent" (click)="eliminarImagenAnterior(10)">Eliminar archivo</button>
+            </div>
+            <div class="col-auto">
+                <label class="text-decoration-underline fw-bold" *ngIf="mode == 'edit'">Reemplazar imagen</label>
+                <app-input-file (changeImage)="changeImagen($event, 'imagen9')" nameInput="imagen9"
+                (deleteImage)="deleteImagen($event, 'imagen9')"></app-input-file>
+            </div>
+        </div>
+        <div class="col-md-6 mb-4 row mx-0">
+            <div class="col-auto" *ngIf="mode == 'edit' && imagen11_aux != '0'">
+                <div class="img-preview mx-auto mb-2" [style.backgroundImage]="'url('+imagen11_aux+')'">
+                </div>
+                <button mat-raised-button color="accent" (click)="eliminarImagenAnterior(11)">Eliminar archivo</button>
+            </div>
+            <div class="col-auto">
+                <label class="text-decoration-underline fw-bold" *ngIf="mode == 'edit'">Reemplazar imagen</label>
+                <app-input-file (changeImage)="changeImagen($event, 'imagen10')" nameInput="imagen10"
+                (deleteImage)="deleteImagen($event, 'imagen10')"></app-input-file>
+            </div>
+        </div>
+    </div>
+    <div class="row mb-4" *ngIf="urlYoutube">
+        <div class="col-12 col-md-6 col-lg-5">
+            <label class="fw-bolder mb-2">Video:</label>
+            <iframe width="100%" height="315" [src]="urlYoutube"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+        </div>
+    </div>
+    <div class="row mb-4">
+        <div class="col-12">
+            <label class="fw-bolder mb-2">URL de video:</label>
+            <input type="text" class="form-control" formControlName="videoURL">
+        </div>
+    </div>
+    <br>
+    <h3 class="text-dorado mt-4 subtitle-addproduct">Imágenes de empaque para producto</h3>
+    <div class="pt-4 mb-5">
+        <p class="fw-bolder">Tendrá empaque de cortesía:</p>
+        <div>
+            <span class="pe-2">No</span>
+            <mat-slide-toggle color="primary" 
+            formControlName="hasPackaging"
+            (change)="changeHasPacking($event)">Si</mat-slide-toggle>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <label class="fw-bolder mb-2">Elegir empaque:</label>
+        <mat-form-field appearance="legacy" floatLabel="never" class="select-custom">
+            <mat-label>Seleccionar</mat-label>
+            <mat-select [disableOptionCentering]="true" formControlName="packing">
+                <mat-option *ngFor="let packing of listPackings" [value]="packing.idpacking">
+                    {{packing.packingName}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <div class="pt-5">
+        <button type="submit" mat-raised-button color="primary" [disabled]="loading">
+            <div class="spinner-border text-light spinner-border-sm" role="status" *ngIf="loading">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            {{mode == 'edit' ? 'Actualizar datos':'Guardar datos y cargar datos para venta'}}
+        </button>
+    </div>
+    <div class="py-4 text-center">
+        <a [routerLink]="['/admin/product']" mat-button class="bg-light">Regresar</a>
+    </div>
+</form>

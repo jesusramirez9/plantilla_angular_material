@@ -1,0 +1,154 @@
+$dorado: #BE8A3E;
+
+.banner_artesanos{
+    background-image: url('../../../assets/images/craftsmen/top.png');
+}
+
+.content-artesanos{
+    width: 90%;
+    margin: auto;
+}
+.artesano1{
+    padding-bottom: 3rem;
+}
+.artesano1_img{
+    background-position: center;
+    background-size: cover;
+    background-image: url('../../../assets/images/craftsmen/img01.jpg');
+    border-radius: 10px;
+    height: 200px;
+}
+
+.artesano_h2{
+    color: $dorado;
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+.artesano_p{
+    color: #000;
+    font-size: 0.9rem;
+    text-align: justify;
+}
+
+.img_artesano{
+    width: 100%;
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+
+    &::after{
+        content: '';
+        display: block;
+        padding-bottom: 110%;
+    }
+}
+.text_artesano{
+    padding-top: 1rem;
+
+    h2{
+        font-size: 1.5rem;
+        color: $dorado;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+    }
+    p{
+        font-size: 1.2rem;
+        color: #8a8a8a;
+    }
+}
+
+
+@media(min-width: 768px){
+    .content-artesanos{
+        width: 90%;
+    }
+    .artesano1{
+        padding: 2rem 0;
+    }
+    .artesano_h2{
+        font-size: 2rem;
+    }
+    .artesano_p{
+        font-size: 1.1rem;
+    }
+    .artesano1_img{
+        height: auto;
+    }
+    .text_artesano{
+        h2{
+            font-size: 1.1rem;
+        }
+        p{
+            font-size: 1rem;
+        }
+    }
+}
+
+@media(min-width: 992px){
+    .banner_artesanos h2 {
+        padding: 10rem 1rem 8rem;
+    }
+    .content-artesanos{
+        width: 85%;
+    }
+    .artesano1{
+        padding: 3rem 0;
+    }
+}
+
+@media(min-width: 1200px){
+    .artesano1{
+        padding: 4rem 0;
+    }
+    .text_artesano{
+        h2{
+            font-size: 1.5rem;
+        }
+        p{
+            font-size: 1.2rem;
+        }
+    }
+}
+
+@media(min-width: 1440px){
+    .banner_artesanos h2 {
+        padding: 12rem 1rem 8rem;
+    }
+    
+}
+
+@media(min-width: 1600px){
+    .banner_artesanos h2 {
+        padding: 14rem 1rem 12rem;
+    }
+    .artesano_h2{
+        font-size: 2.4rem;
+    }
+    .artesano_p{
+        font-size: 1.3rem;
+    }
+    .text_artesano{
+        h2{
+            font-size: 1.6rem;
+        }
+        p{
+            font-size: 1.3rem;
+        }
+    }
+    .artesano1_img{
+        height: 400px;
+    }
+}
+
+@media(min-width: 1900px){
+    .artesano_h2{
+        font-size: 2.6rem;
+    }
+    .artesano_p{
+        font-size: 1.5rem;
+    }
+    .artesano1_img{
+        height: 450px;
+    }
+}

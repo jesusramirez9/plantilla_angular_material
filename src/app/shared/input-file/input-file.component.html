@@ -1,0 +1,8 @@
+<div class="img-preview-mini mb-2 ms-3" [hidden]="!url" style="background-image: url({{url}});"></div>
+<div class="d-flex align-items-center">
+    <input type="file" accept="image/*" #img class="form-control input-file-comp" [name]="nameInput"
+        (change)="handleFileInput($event.target)" [class.is-invalid]="isEmpty">
+    <button class="btn btnDelete ms-2" *ngIf="buttonDelete" (click)="deleteImagen(img)">
+        <span class="material-icons">delete</span>
+    </button>
+</div>

@@ -1,0 +1,242 @@
+$dorado: #BE8A3E;
+
+.banner_blog{
+    background-image: url('../../../assets/images/blog/top.png');
+}
+
+.content-blog{
+    width: 90%;
+    margin: auto;
+}
+
+.blog1{
+    padding: 1rem 0 3rem;
+}
+.blog1-slider{
+    height: 300px;
+}
+.btn-return{
+    display: inline-flex;
+    align-items: center;
+    font-size: 1rem;
+    color: #67757c;
+}
+.blog_h2{
+    color: $dorado;
+    font-size: 1.5em;
+    font-weight: 600;
+
+    span{
+        font-size: 1rem;
+        color: #D9B089;
+    }
+}
+.slider_item_blog{
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+}
+.blog_ultimos{
+    border-radius: 7px;
+    overflow: hidden;
+    background-color: #E5D0B1;
+
+    .blog_ultimos_text {
+        .blog_fecha{
+            font-size: .8rem;
+        }
+        .blog_title{
+            font-size: 1.1rem;
+        }
+    }
+}
+.blog_fecha{
+    color: #696969;
+}
+.blog_title{
+    color: $dorado;
+    font-weight: 600;
+}
+.blog_text{
+    color: #000;
+}
+.blog_ultimos_text{
+    padding: 2rem;
+}
+.blog_item_img{
+    background-size: cover;
+    background-position: center;
+    height: 200px;
+}
+
+.blog_item_text{
+    padding: 2rem 1rem;
+
+    .blog_fecha{
+        margin-bottom: .5rem;
+        font-size: .7rem;
+    }
+    .blog_title{
+        font-size: 1.1rem;
+    }
+}
+
+@media(min-width: 375px){
+    .blog_h2{
+        font-size: 1.8rem;
+    }
+    .blog_ultimos{
+        .blog_ultimos_text {
+            .blog_title{
+                font-size: 1.25rem;
+            }
+        }
+    }
+}
+
+@media(min-width: 425px){
+    .blog_ultimos{
+        .blog_ultimos_text {
+            .blog_title{
+                font-size: 1.45rem;
+            }
+            .blog_text{
+                font-size: 1rem;
+            }
+        }
+    }
+    .blog_h2{
+        span{
+            font-size: 1.5rem;
+        }
+    }
+}
+@media(min-width: 768px){
+    .content-blog{
+        width: 90%;
+    }
+    .blog1{
+        padding: 2rem 0;
+    }
+    .blog_h2{
+        font-size: 2.2rem;
+    }
+    .blog1-slider, .blog_item_img{
+        height: auto;
+    }
+    .blog_ultimos{
+        .blog_ultimos_text {
+            padding: 5rem 2rem;
+
+            .blog_title{
+                font-size: 1.6rem;
+            }
+        }
+    }
+}
+
+@media(min-width: 992px){
+    .banner_blog h2 {
+        padding: 10rem 1rem 8rem;
+    }
+    .blog1{
+        padding: 3rem 0;
+    }
+    .blog_h2{
+        font-size: 2.4rem;
+    }
+    .blog_ultimos{
+        .blog_ultimos_text {
+            .blog_title{
+                font-size: 1.8rem;
+            }
+        }
+    }
+}
+
+@media(min-width: 1200px){
+    .blog1{
+        padding: 4rem 0;
+    }
+    .content-blog{
+        width: 85%;
+    }
+    
+}
+
+@media(min-width: 1440px){
+    .banner_blog h2 {
+        padding: 12rem 1rem 8rem;
+    }
+    
+}
+
+@media(min-width: 1600px){
+    .banner_blog h2 {
+        padding: 14rem 1rem 12rem;
+    }
+    .btn-return{
+        font-size: 1.2rem;
+    }
+    .blog_h2{
+        font-size: 2.8rem;
+    }
+    .blog_ultimos{
+        .blog_ultimos_text {
+            padding: 5rem 3rem;
+
+            .blog_fecha{
+                font-size: .9rem;
+            }
+            .blog_title{
+                font-size: 2.2rem;
+            }
+            .blog_text{
+                font-size: 1.1rem;
+            }
+        }
+    }
+    .blog_item_text{
+        .blog_fecha{
+            font-size: .8rem;
+        }
+        .blog_title{
+            font-size: 1.2rem;
+        }
+    }
+    .blog_h2{
+        span{
+            font-size: 1.8rem;
+        }
+    }
+}
+
+@media(min-width: 1900px){
+    .btn-return{
+        font-size: 1.5rem;
+    }
+    .blog_h2{
+        font-size: 3rem;
+    }
+    .blog_ultimos{
+        .blog_ultimos_text {
+            .blog_fecha{
+                font-size: 1rem;
+            }
+            .blog_title{
+                font-size: 2.5rem;
+            }
+            .blog_text{
+                font-size: 1.2rem;
+            }
+        }
+    }
+    .blog_item_text{
+        .blog_title{
+            font-size: 1.4rem;
+        }
+        .blog_text{
+            font-size: 1rem;
+        }
+    }
+}

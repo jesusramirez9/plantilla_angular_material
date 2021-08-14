@@ -1,0 +1,177 @@
+<mat-card class="example-card shadow-none">
+    <mat-card-content>
+        <div class="d-flex justify-content-between align-items-center">
+            <h2 class="title-addproduct">Detalle de producto</h2>
+            <div>
+                <span class="pe-2">Desactivado</span>
+                <mat-slide-toggle [checked]="true" color="primary">Activado</mat-slide-toggle>
+            </div>
+        </div>
+        <br>
+        <p class="text-dorado mb-5 subtitle-addproduct">Imágenes del producto</p>
+        <div class="row mb-4">
+            <div class="col-12">
+                <p class="font-bolder">Imagen principal</p>
+            </div>
+            <div class="col-12">
+                <div class="img-product-detail" *ngIf="imagenPrincipal.productsimageName != '0'"
+                    style="background-image: url({{imagenPrincipal.productsimageName}});">
+                </div>
+            </div>
+        </div>
+        <div class="row mb-4">
+            <div class="col-12">
+                <p class="font-bolder">Imagenes secundarias</p>
+            </div>
+            <div class="col-12">
+                <div class="d-inline-block" *ngFor="let imagen of imagenes">
+                    <div class="img-product-detail" *ngIf="imagen.productsimageName != '0'"
+                    style="background-image: url({{imagen.productsimageName}});">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="video-detalle mt-5">
+            <p class="text-dorado mb-4 subtitle-addproduct">Video del producto</p>
+            <div class="col-12 col-md-6 col-lg-5">
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/fzVpWco2qZk"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <br><br>
+        <div class="detail-info-general mb-5">
+            <p class="text-dorado mb-5 subtitle-addproduct">Características del producto</p>
+            <div class="row mb-4">
+                <div class="col-md-4">
+                    <label class="form-label font-bolder">Nombre:</label>
+                    <p>{{producto.productsName}}</p>
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label font-bolder">Nombre:</label>
+                    <p>{{producto.productsNameDescription}}</p>
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label font-bolder">Código:</label>
+                    <p>{{producto.productsCode}}</p>
+                </div>
+            </div>
+            <div class="row mb-4">
+                <div class="col-auto">
+                    <label class="form-label font-bolder">Color:</label>
+                    <div class="d-block">
+                        <mat-chip-list #chipList aria-label="Color selection">
+                            <mat-chip *ngFor="let color of colores" style="font-size: .7rem;">
+                                <mat-icon [style.color]="color.colorCode">circle</mat-icon>
+                                {{color.colorCode}}
+                            </mat-chip>
+                        </mat-chip-list>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-4">
+                <div class="col-md-3">
+                    <label class="form-label font-bolder">Categoría:</label>
+                    <p>Artesanía</p>
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label font-bolder">Festividad:</label>
+                    <p>Cumpleaños</p>
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label font-bolder">Tipo de producto:</label>
+                    <p>Personalizado</p>
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label font-bolder">PDF adjuntado:</label>
+                    <div>
+                        <a *ngIf="producto.productsFilePdf != '0'"
+                        target="_blank"
+                        [href]="producto.productsFilePdf"
+                        class="btn btnDownload">Ver archivo adjunto</a>
+                        <p *ngIf="producto.productsFilePdf == '0'">No hay registro.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-4">
+                <div class="col-md-6">
+                    <div class="pb-4">
+                        <label class="form-label font-bolder">Descripción 1:</label>
+                        <p class="">{{producto.productsDescription1}}</p>
+                    </div>
+                    <div class="">
+                        <label class="form-label font-bolder">Descripción 2:</label>
+                        <p class="">{{producto.productsDescription2}}</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="pb-4">
+                        <label class="form-label font-bolder">Historia del producto:</label>
+                        <p class="">{{producto.productsDescription3}}</p>
+                    </div>
+                    <div class="pb-4">
+                        <label class="form-label font-bolder">Lugar de origen:</label>
+                        <p class="">{{producto.productsOriginPlace}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="detail-info-venta mb-5">
+            <p class="text-dorado mb-5 subtitle-addproduct">Datos para venta del producto</p>
+            <div class="row">
+                <div class="col-12 mb-4">
+                    <label class="form-label font-bolder">Términos de pago:</label>
+                    <div class="">
+                        <p class="p-2 d-inline-block" *ngFor="let pago of tiposPago">{{pago.typepaymentName}}</p>
+                    </div>
+                </div>
+                <div class="col-12 mb-4">
+                    <label class="form-label font-bolder">Empaque de cortesía:</label>
+                    <p>Si</p>
+                </div>
+            </div>
+            <div class="row mb-5">
+                <div class="col-12 col-md-3">
+                    <label class="form-label font-bolder">Empaque elegido:</label>
+                    <p>Empaque de regalo especial</p>
+                </div>
+                <div class="col-12 col-md-3">
+                    <label class="form-label font-bolder">Costo de empaque:</label>
+                    <p>S/ 20.00</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row pt-3 mb-5">
+            <div class="col-12 col-md-6">
+                <p class="font-bolder">Precios de producto:</p>
+                <div class="col-12 col-md-8">
+                    <table class="table table-costos">
+                        <thead>
+                            <tr>
+                                <th>Cant. Mínima</th>
+                                <th>Cant. Máxima</th>
+                                <th>Costo S/</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let precio of precios">
+                                <td>{{precio.priceMinQuantity}}</td>
+                                <td>{{precio.priceMaxQuantity}}</td>
+                                <td>{{precio.priceAmount}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="mb-4 text-center">
+            <a [routerLink]="['/admin/product']" mat-button class="bg-light">Regresar</a>
+            <a [routerLink]="['/admin/product/edit/'+idProduct]" mat-button class="bg-light">Editar este producto</a>
+        </div>
+    </mat-card-content>
+</mat-card>

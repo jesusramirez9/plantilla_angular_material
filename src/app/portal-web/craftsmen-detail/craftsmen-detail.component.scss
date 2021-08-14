@@ -1,0 +1,126 @@
+$dorado: #BE8A3E;
+
+.banner_artesanos{
+    background-image: url('../../../assets/images/craftsmen/top.png');
+}
+
+.content-artesanos{
+    width: 90%;
+    margin: auto;
+}
+
+.artesano1{
+    padding-bottom: 3rem;
+}
+.artesano1_img{
+    height: 300px;
+}
+.content-slider-artesanos{
+    border-radius: 10px;
+    overflow: hidden;
+    height: 100%;
+}
+.slider_artesano{
+    background-position: center;
+    background-size: cover;
+    background-image: url('../../../assets/images/craftsmen/artesano.jpg');
+    height: 100%;
+}
+.btn-return{
+    display: inline-flex;
+    align-items: center;
+    font-size: 1rem;
+    color: #67757c;
+}
+.artesano_h2{
+    color: $dorado;
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+.artesano_h3{
+    font-size: 1.3rem;
+}
+.artesano_p{
+    color: #000;
+    font-size: 0.9rem;
+    text-align: justify;
+}
+
+
+
+@media(min-width: 768px){
+    .content-artesanos{
+        width: 90%;
+    }
+    .artesano1{
+        padding: 2rem 0;
+    }
+    .artesano_h2{
+        font-size: 2.1rem;
+    }
+    .artesano_p{
+        font-size: 1rem;
+    }
+    .artesano1_img{
+        height: auto;
+    }
+}
+
+@media(min-width: 992px){
+    .banner_artesanos h2 {
+        padding: 10rem 1rem 8rem;
+    }
+    .content-artesanos{
+        width: 85%;
+    }
+    .artesano1{
+        padding: 3rem 0;
+    }
+    .artesano_h2{
+        font-size: 2.5rem;
+    }
+    .artesano_p{
+        font-size: 1.1rem;
+    }
+    .artesano_h3{
+        font-size: 1.4rem;
+    }
+}
+
+@media(min-width: 1200px){
+    .artesano1{
+        padding: 4rem 0;
+    }
+    
+}
+
+@media(min-width: 1440px){
+    .banner_artesanos h2 {
+        padding: 12rem 1rem 8rem;
+    }
+    
+}
+
+@media(min-width: 1600px){
+    .banner_artesanos h2 {
+        padding: 14rem 1rem 12rem;
+    }
+    .btn-return{
+        font-size: 1.2rem;
+    }
+}
+
+@media(min-width: 1900px){
+    .btn-return{
+        font-size: 1.5rem;
+    }
+    .artesano_h2{
+        font-size: 3.5rem;
+    }
+    .artesano_h3{
+        font-size: 1.8rem;
+    }
+    .artesano_p{
+        font-size: 1.4rem;
+    }
+}

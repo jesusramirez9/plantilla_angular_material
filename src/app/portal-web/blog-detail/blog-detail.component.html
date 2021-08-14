@@ -1,0 +1,54 @@
+<div class="section_general">
+    <!-- BANNER ARTESANOS -->
+    <div class="banner banner_blog">
+        <h2><span>Nuestro Blog</span></h2>
+    </div>
+
+    <div class="content-blog">
+        <!-- BLOG 1 -->
+        <div class="blog1 row">
+            <div class="col-md-8 col-lg-9 px-lg-4 pb-5 pb-md-0">
+                <div class="rounded-3 overflow-hidden">
+                    <img src="../../../assets/images/blog/blog-detalle.jpg" alt="Imagen blog" class="img-fluid">
+                </div>
+                <h2 class="blog_detalle_h2">Realizamos los productos oficiales de Alianza Lima</h2>
+                <p class="blog_detalle_fecha">10 de Mayo, 2021</p>
+                <div class="blog_detalle_text">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime incidunt error quaerat, nihil perferendis quis ab culpa nam ea, odit corrupti eos accusamus temporibus, sunt architecto? Fugit pariatur temporibus tempore maxime quasi quaerat accusamus unde atque, dolorum nesciunt praesentium quod.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime incidunt error quaerat, nihil perferendis quis ab culpa nam ea, odit corrupti eos accusamus temporibus, sunt architecto? Fugit pariatur temporibus tempore maxime quasi quaerat accusamus unde atque, dolorum nesciunt praesentium quod.</p>
+                </div>
+                <div class="blog_video py-4">
+                    <iframe width="100%" class="blog_video_frame" src="https://www.youtube-nocookie.com/embed/k2BJjjgU8Ro" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="blog_detalle_text">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime incidunt error quaerat, nihil perferendis quis ab culpa nam ea, odit corrupti eos accusamus temporibus, sunt architecto? Fugit pariatur temporibus tempore maxime quasi quaerat accusamus unde atque, dolorum nesciunt praesentium quod.</p>
+                </div>
+                <div class="blog_compartir">
+                    <span>Compartir en:</span>
+                    <a href="" class="d-inline-block ms-3">
+                        <img src="../../../assets/images/blog/facebook.png" alt="">
+                    </a>
+                    <a href="" class="d-inline-block mx-3">
+                        <img src="../../../assets/images/blog/twitter.png" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-3">
+                <h2 class="blog_title titulo_noticias">Más Noticias</h2>
+                <div class="row mx-0 blog_ultimos mb-4" *ngFor="let item of [2,3,4]">
+                    <div class="col-12 blog_item_img" [style.backgroundImage]="'url(../../../../../assets/images/blog/blog-small.jpg)'"></div>
+                    <div class="col-12 blog_item_text">
+                        <p class="blog_fecha">10 de Mayo, 2021</p>
+                        <h2 class="blog_title mb-2">Realizamos los productos oficiales de Alianza Lima</h2>
+                        <div class="text-start">
+                            <a href="/blog/{{item}}" class="btn-link-dorado">VER NOTA</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+        
+    </div>
+</div>

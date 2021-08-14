@@ -1,0 +1,135 @@
+<mat-card class="example-card shadow-none">
+    <mat-card-content>
+        <div class="row mb-5">
+            <div class="col-12 col-md-8">
+                <div class="col-12 mb-5">
+                    <h2 class="title-addproduct">Pedidos y compras</h2>
+                </div>
+                <div class="row">
+                    <div class="col-12 mb-4">
+                        <label class="fw-bolder mb-2">Código de pedido:</label>
+                        <p class="mb-0">PD0001</p>
+                    </div>
+                    <div class="col-12 col-md-6 mb-4">
+                        <label class="fw-bolder mb-2">Usuario:</label>
+                        <p class="mb-0 overflow-hidden">TARQUINO ACOSTA JUAN SEBASTIAN <button mat-button color="primary" class="ms-1 mbutton-text-user">(Ver datos de usuario)</button></p>
+                    </div>
+                    <div class="col-12 col-md-6 mb-4">
+                        <label class="fw-bolder mb-2">Producto:</label>
+                        <p class="mb-0">Tazas de barro artesanales de la región de Puno.</p>
+                    </div>
+                    <div class="col-12 mb-4">
+                        <label class="fw-bolder mb-2">Estado de pedido:</label>
+                        <p class="mb-0">Pendiente</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4" *ngIf="false">
+                <div class="card border-dark mx-auto card-resumen">
+                    <div class="card-body overflow-hidden">
+                        <h2 class="card-title text-center fw-bolder text-decoration-underline">Estado de Pedido</h2>
+                        <table class="table table-borderless">
+                            <tbody>
+                                <tr>
+                                    <td>TOTAL:</td>
+                                    <td>1515</td>
+                                </tr>
+                                <tr>
+                                    <td>Monto pagado:</td>
+                                    <td>500</td>
+                                </tr>
+                                <tr>
+                                    <td>Número de cuotas:</td>
+                                    <td>3</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-xl-8">
+                <h2 class="text-dorado mb-5 font-bold col-12">Enviar costo de envío</h2>
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <label class="fw-bolder form-label">Correo:</label>
+                        <input type="email" class="form-control">
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <label class="fw-bolder form-label">Asunto:</label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="form-label text-inline">
+                            <label class="fw-bolder d-inline">Tipo de envío:</label>
+                        </div>
+                        <mat-form-field appearance="legacy" floatLabel="never" class="select-custom">
+                            <mat-label>Seleccionar</mat-label>
+                            <mat-select [disableOptionCentering]="true">
+                                <mat-option value="1">Envio a dirección</mat-option>
+                                <mat-option value="2">Acordar lugar</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <div class="form-label text-inline">
+                            <label class="fw-bolder d-inline">Departamento de envío:</label>
+                        </div>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="form-label text-inline">
+                            <label class="fw-bolder d-inline">Distrito de envío:</label>
+                        </div>
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8 mb-4">
+                        <div class="form-label text-inline">
+                            <label class="fw-bolder d-inline">Lugar de envío:</label>
+                        </div>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="form-label text-inline">
+                            <label class="fw-bolder d-inline">Costo de envío:</label>
+                        </div>
+                        <input type="number" class="form-control">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8 mb-4">
+                        <div class="form-label text-inline">
+                            <label class="fw-bolder d-inline">Empresa o medio de envío:</label>
+                        </div>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="form-label text-inline">
+                            <label class="fw-bolder d-inline">Fecha estimada para envío:</label>
+                        </div>
+                        <input type="date" class="form-control">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 mb-4">
+                        <label class="fw-bolder form-label">Detalle opcional:</label>
+                        <textarea rows="4" class="form-control"></textarea>
+                    </div>
+                </div>
+                <div class="text-right">
+                    <button mat-raised-button color="primary">Enviar mensaje</button>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="text-center">
+            <a mat-button [routerLink]="['/admin/orders']" class="bg-light text-dark">Regresar</a>
+        </div>
+        <br>
+    </mat-card-content>
+</mat-card>

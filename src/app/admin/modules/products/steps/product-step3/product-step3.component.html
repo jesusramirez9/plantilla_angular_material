@@ -1,0 +1,73 @@
+<form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+    <div class="row mb-4">
+        <div class="col-auto">
+            <label class="fw-bolder form-label">Términos de pago:</label>
+            <div>
+                <section class="example-section">
+                    <mat-checkbox 
+                    class="example-margin me-5" 
+                    formControlName="paymentType1"
+                    color="primary">50% adelantado</mat-checkbox>
+
+                    <mat-checkbox 
+                    class="example-margin me-5" 
+                    formControlName="paymentType2"
+                    color="primary">100% adelantado</mat-checkbox>
+
+                    <mat-checkbox 
+                    class="example-margin me-5" 
+                    formControlName="paymentType3"
+                    color="primary">Personalizado</mat-checkbox>
+                </section>
+            </div>
+        </div>
+    </div>
+    <p class="fw-bolder py-3">Precio de producto:</p>
+    <div formArrayName="rangePrice">
+        <div class="row" [formGroupName]="i" *ngFor="let range of rangePrice.controls; let i = index;">
+            <div class="col-sm-3 col-xl-auto">
+                <mat-form-field appearance="outline">
+                    <mat-label>Cantidad mínima</mat-label>
+                    <input type="number" matInput autocomplete="off" formControlName="minimumAmount" [class.is-invalid]="minPrice(i)">
+                </mat-form-field>
+            </div>
+            <div class="col-sm-3 col-xl-auto">
+                <mat-form-field appearance="outline">
+                    <mat-label>Cantidad máxima</mat-label>
+                    <input type="number" matInput autocomplete="off" formControlName="maximumQuantity" [class.is-invalid]="maxPrice(i)">
+                </mat-form-field>
+            </div>
+            <div class="col-sm-3 col-xl-auto">
+                <mat-form-field appearance="outline">
+                    <mat-label>Precio</mat-label>
+                    <input type="number" matInput autocomplete="off" formControlName="price" [class.is-invalid]="amountPrice(i)">
+                </mat-form-field>
+            </div>
+            <div class="col-md-auto text-center px-0 pt-md-3" *ngIf="i != 0 ? true:false">
+                <button type="button" class="btn btnDelete" (click)="removePrice(i)">
+                    <span class="material-icons">delete</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="mb-4">
+        <button type="button" (click)="addPrice('','','')" class="btn btnAddPrice">Agregar</button>
+    </div>
+    
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="">
+                <button type="submit" mat-raised-button color="primary" [disabled]="loading">
+                    <div class="spinner-border text-light spinner-border-sm" role="status" *ngIf="loading">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                    {{mode == 'edit' ? 'Actualizar datos':'Guardar datos y finalizar carga'}}
+                </button>
+            </div>
+            <div class="pt-4 text-center">
+                <a [routerLink]="['/admin/product']" mat-button class="bg-light">Regresar</a>
+            </div>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,86 @@
+<!-- ============================================================== -->
+<!-- Main wrapper - style you can find in pages.scss -->
+<!-- ============================================================== -->
+<div class="main-container">
+    <mat-toolbar color="primary" class="topbar telative">
+        <!-- <div class="navbar-header">
+            <a class="navbar-brand" href="javascript:void(0)">
+                <b>
+                    <img src="assets/images/logo-light-icon.png" alt="homepage" class="light-logo">
+                </b>
+                <span fxShow="false" fxShow.gt-xs>
+                    <img src="assets/images/logo-light-text.png" class="light-logo" alt="homepage">
+                </span>
+            </a>
+        </div>
+
+        <button mat-icon-button (click)="snav.toggle()" value="sidebarclosed">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <span fxFlex></span>-->
+
+        <div class="header">
+            <mat-toolbar class="header-web">
+                <!-- ============================================================== -->
+                <!-- Logo - style you can find in header.scss -->
+                <!-- ============================================================== -->
+                <div class="navbar-header">
+                    <a class="navbar-brand py-0" href="javascript:void(0)">
+                        <img src="assets/images/header/logo.png" alt="homepage" class="light-logo">
+                    </a>
+                </div>
+                <span fxFlex></span>
+                <div class="d-none d-lg-block">
+                    <a class="navbar-brand" routerLink="/home">Inicio</a>
+                    <a class="navbar-brand" routerLink="/regalosCorporativos">Regalos Corporativos</a>
+                    <a class="navbar-brand" routerLink="">Proyectos HORECA</a>
+                    <a class="navbar-brand" routerLink="">Licencias</a>
+                    <a class="navbar-brand" routerLink="">Tiendas</a>
+                    <a class="navbar-brand" routerLink="/blog">Blog</a>
+                </div>
+                <div class="d-flex align-items-center ms-5">
+                    <a class="navbar-brand me-4 d-none d-md-block" [routerLink]=""><img src="assets/images/header/icono1.png" class="navbar-brand-img"></a>
+                    <app-header class="" (logout)="logout()"></app-header>
+                </div>
+                <div class="d-lg-none">
+                    <button mat-icon-button (click)="snav.toggle()" value="sidebarclosed" class="text-white">
+                        <mat-icon>{{icon_menu}}</mat-icon>
+                        <!-- <img src="assets/images/users/1.jpg" alt="user" class="profile-pic"> -->
+                    </button>
+                </div>
+            </mat-toolbar>
+        </div>
+    </mat-toolbar>
+    <!-- ============================================================== -->
+    <!-- End Topbar - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 0 : 0">
+        <!-- ============================================================== -->
+        <!-- Sidebar - style you can find in sidebar.scss -->
+        <!-- ============================================================== -->
+        <mat-sidenav #snav id="snav" class="dark-sidebar pl-xs" [opened]="false" (closed)="snav.close()" position="end" (openedChange)="statusSidenav($event)">
+            <app-sidebar (closeSidenav)="closeSidenav(snav)"></app-sidebar>
+        </mat-sidenav>
+        <!-- ============================================================== -->
+        <!-- Sidebar - style you can find in sidebar.scss -->
+        <!-- ============================================================== -->
+
+        <!-- ============================================================== -->
+        <!-- Page container - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+        <mat-sidenav-content class="page-wrapper">
+            <div class="page-content">
+
+                <router-outlet>
+                    <app-spinner></app-spinner>
+                </router-outlet>
+
+            </div>
+
+            <app-footer></app-footer>
+        </mat-sidenav-content>
+        <!-- ============================================================== -->
+        <!-- Page container - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+    </mat-sidenav-container>
+</div>

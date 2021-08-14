@@ -1,0 +1,30 @@
+<h1 mat-dialog-title class="titleLogin">Ingresar</h1>
+<div mat-dialog-content>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="form-group mb-3">
+            <label class="form-label">Correo electrónico</label>
+            <input type="email" class="form-control" formControlName="userName" [class.is-invalid]="userName" required>
+        </div>
+        <div class="form-group">
+            <label class="form-label">Contraseña</label>
+            <input type="password" class="form-control" formControlName="password" [class.is-invalid]="password" required>
+        </div>
+        <div class="text-end">
+            <button type="button" class="btn btnOlvidaste px-0">¿Olvidaste tu contraseña?</button>
+        </div>
+        <div class="col-12 mt-3 mb-2">
+            <p class="text-success" *ngIf="submitSuccess">Accesos correctos. Ingresando ...</p>
+            <p class="text-danger" *ngIf="submitError">Datos incorrectos, verifique el usuario y contraseña.</p>
+            <button type="submit" mat-raised-button color="primary" class="w-100 buttonSubmit" [disabled]="loading">
+                <div class="spinner-border text-light spinner-border-sm" role="status" *ngIf="loading">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                INGRESAR
+            </button>
+        </div>
+        <div class="msgRegistrate">
+            <span>¿No tienes una cuenta?</span>
+            <button type="button" class="btn btnRegistrate" (click)="openDialogRegister()">Registrate</button>
+        </div>
+    </form>
+</div>

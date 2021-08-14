@@ -1,0 +1,719 @@
+$dorado: #BE8A3E;
+
+.carousel-home {
+    .carousel-indicators {
+        .active {
+            background-color: $dorado;
+        }
+
+        button {
+            width           : 16px;
+            height          : 16px;
+            border          : 1px solid #fff;
+            margin-left     : 5px;
+            margin-right    : 5px;
+            border-radius   : 50%;
+            background-color: transparent;
+            opacity         : 1;
+        }
+    }
+
+    .carousel-item {
+        height             : calc(100vh + 100px);
+        background-position: center;
+        background-size    : cover;
+        position           : relative;
+    }
+
+    .carousel-control-next,
+    .carousel-control-prev {
+        width: 5%;
+    }
+}
+
+.slider-text-content {
+    width      : 100%;
+    height     : 100%;
+    display    : flex;
+    align-items: center;
+
+    .slider-text {
+        width : 90%;
+        margin: 0 auto;
+        color : #fff;
+        text-align: center;
+
+        p {
+            font-size   : 1.3rem;
+            font-weight : 500;
+            line-height : 1.1;
+            text-shadow : -3px 3px 6px rgb(0 0 0 / 50%);
+            padding-left: 5px;
+        }
+
+        h2 {
+            font-size    : 5rem;
+            font-weight  : 700;
+            line-height  : 1.1;
+            text-shadow  : -3px 3px 6px rgb(0 0 0 / 50%);
+            margin-bottom: 0;
+        }
+
+        h3 {
+            font-size  : 3.2rem;
+            font-weight: 700;
+            line-height: 1.1;
+            text-shadow: -3px 3px 6px rgb(0 0 0 / 50%);
+        }
+    }
+}
+
+.img-product {
+    position           : relative;
+    width              : auto;
+    background-position: center;
+    background-size    : cover;
+    background-color   : #FFEBCF;
+    border             : 1px solid $dorado;
+    border-radius      : 8px;
+}
+
+.img-product::after {
+    content       : '';
+    display       : block;
+    padding-bottom: 100%;
+}
+
+.home1 {
+    padding: 1rem 0 0;
+
+    .home1-col {
+        margin-bottom: 3rem;
+    }
+}
+
+.home1-text {
+    margin: 0 3rem;
+
+    h2 {
+        margin: 3rem 0 2rem;
+    }
+}
+
+.home-text-p {
+    font-size  : .9rem;
+    text-align : justify;
+    line-height: normal;
+    color      : #000;
+}
+
+.name-product {
+    h2 {
+        font-size    : 1.5rem;
+        font-weight  : 600;
+        color        : $dorado;
+        margin-top   : 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    h3 {
+        font-size    : 1.5rem;
+        font-weight  : 500;
+        color        : $dorado;
+        margin-bottom: 0;
+
+        span {
+            font-size: 1.1rem;
+        }
+    }
+}
+
+.home2 {
+    padding: 0 1rem;
+
+    .home2-banner {
+        border-radius      : 8px;
+        background-image   : url('../../../assets/images/home/banner.png');
+        background-position: center;
+        background-size    : cover;
+        padding            : 2rem;
+        color              : #fff;
+
+        h3 {
+            font-size  : 1.3rem;
+            font-weight: 700;
+            text-shadow: -3px 3px 6px rgb(0 0 0 / 50%);
+            line-height: 1;
+        }
+
+        h2 {
+            font-size    : 1.8rem;
+            font-weight  : 700;
+            text-shadow  : -3px 3px 6px rgb(0 0 0 / 50%);
+            line-height  : 1;
+            margin-bottom: 1.2rem;
+        }
+
+        p {
+            font-size  : 1rem;
+            font-weight: 500;
+            text-align : justify;
+            line-height: normal;
+        }
+    }
+}
+
+.home3 {
+    padding: 4rem 2rem;
+
+    .home3-1 {
+        align-items: center;
+    }
+
+    .home3-2 {
+        margin-left : -1rem;
+        margin-right: -1rem;
+
+        >div {
+            padding: 0 .8rem;
+        }
+
+    }
+
+    .home3-3 img {
+        padding: 0 1rem 1rem;
+    }
+}
+
+.home4 {
+    padding: 0 3rem;
+
+    .home4-1-img {
+        margin-bottom: 3rem;
+
+        >div {
+            height             : 250px;
+            background-position: center;
+            background-size    : cover;
+            border-radius      : 8px;
+        }
+    }
+
+    .home4-1-text {
+        margin-bottom: 3rem;
+
+        h2 {
+            font-size    : 1.55rem;
+            font-weight  : 700;
+            color        : $dorado;
+            line-height  : 1;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        p {
+            margin-bottom: 2.5rem;
+        }
+    }
+}
+
+.home4-title {
+    font-size    : 1.3rem;
+    font-weight  : 700;
+    color        : $dorado;
+    line-height  : 1;
+    margin-bottom: 2rem;
+}
+
+.home5 {
+    padding: 0 3rem 2rem;
+
+    .home5-item {
+        border-radius      : 8px;
+        overflow           : hidden;
+        display            : flex;
+        align-items        : flex-end;
+        background-size    : cover;
+        background-position: center;
+        height             : 320px;
+
+        >div {
+            background-color: rgb(190 138 62 / 95%);
+            color           : #fff;
+            width           : 100%;
+            padding         : 1rem;
+            align-items     : center;
+            font-size       : 1rem;
+        }
+    }
+
+    .home5-item-text {
+        font-size  : 100%;
+        font-weight: 600;
+        line-height: normal;
+    }
+}
+
+.carouselHome6 {
+    .carousel-item {
+        height             : 140px;
+        background-position: center;
+        background-size    : cover;
+        border-radius      : 8px;
+    }
+}
+
+.home1-text-title,
+.home3-1-title {
+    font-size  : 1.3rem;
+    font-weight: 600;
+    line-height: 1;
+    color      : $dorado;
+    text-align: center;
+}
+
+
+@media(min-width: 320px) {
+    .slider-text-content {
+        .slider-text {
+            p {
+                font-size: 1rem;
+            }
+
+            h2 {
+                font-size: 2.5rem;
+            }
+
+            h3 {
+                font-size: 2rem;
+            }
+        }
+    }
+}
+
+@media(min-width: 375px) {
+    .home2 {
+        .home2-banner {
+            h3 {
+                font-size: 1.5rem;
+            }
+
+            h2 {
+                font-size: 2.2rem;
+            }
+        }
+    }
+
+    .home4 {
+        .home4-1-text {
+            h2 {
+                font-size: 1.8rem;
+            }
+        }
+    }
+
+    .home4-title {
+        font-size: 1.6rem;
+    }
+}
+
+@media(min-width: 425px) {
+    .slider-text-content {
+        .slider-text {
+            p {
+                font-size: 1.3rem;
+            }
+
+            h2 {
+                font-size: 3.5rem;
+            }
+
+            h3 {
+                font-size: 2.3rem;
+            }
+        }
+    }
+
+    .home2 {
+        .home2-banner {
+            h3 {
+                font-size: 1.8rem;
+            }
+
+            h2 {
+                font-size: 2.6rem;
+            }
+        }
+    }
+
+    .home4 {
+        .home4-1-text {
+            h2 {
+                font-size: 2.2rem;
+            }
+        }
+    }
+
+    .home4-title {
+        font-size: 1.8rem;
+    }
+
+    .carouselHome6 {
+        .carousel-item {
+            height: 180px;
+        }
+    }
+}
+
+@media(min-width: 768px) {
+    .container-home {
+        width : 95%;
+        margin: 0 auto;
+    }
+
+    .home-text-p {
+        font-size: 1rem;
+    }
+
+    .slider-text-content {
+        .slider-text {
+            text-align: left;
+            h2 {
+                font-size: 5rem;
+            }
+
+            h3 {
+                font-size: 3.2rem;
+            }
+        }
+    }
+
+    .home1 {
+        padding: 4rem 0 0;
+
+        .home1-col {
+            margin-bottom: 4rem;
+        }
+    }
+
+    .name-product {
+        h2 {
+            margin-top   : 1.5rem;
+            margin-bottom: 1rem;
+        }
+    }
+
+    .home2 {
+        padding: 0 3rem;
+
+        .home2-banner {
+            padding: 4rem;
+
+            h3 {
+                font-size: 2.4rem;
+            }
+
+            h2 {
+                font-size    : 3.4rem;
+                margin-bottom: 2rem;
+            }
+
+            p {
+                font-size: 1.2rem;
+            }
+        }
+    }
+
+    .home1-text {
+        h2 {
+            margin: 2rem 0 2rem;
+        }
+    }
+
+    .home3 {
+        margin: 0 2rem;
+
+        .home3-2 {
+            margin-left : -1rem;
+            margin-right: -1rem;
+
+            >div {
+                padding: 3rem 1.4rem;
+            }
+        }
+
+        .home3-3 img {
+            padding: 0 1rem;
+        }
+    }
+
+    .home4 {
+        padding: 1rem 3rem 0;
+
+        .home4-1-img {
+            >div {
+                height: 440px;
+            }
+        }
+
+        .home4-1-text {
+            padding: 3rem 1rem;
+
+            h2 {
+                font-size: 2rem;
+                text-align: left;
+            }
+        }
+    }
+
+    .carouselHome6 {
+        .carousel-item {
+            height: 340px;
+        }
+    }
+
+    .home5 {
+        .home5-item-text {
+            font-size: 1.2rem;
+        }
+    }
+
+    .home7{
+        margin: 0 3rem;
+        padding: 0 3rem;
+    }
+    .home1-text-title,
+    .home3-1-title {
+        text-align: left;
+        font-size: 1.5rem;
+    }
+}
+
+@media(min-width: 992px) {
+    .home1-text {
+        h2 {
+            margin: 3rem 0 2rem;
+        }
+    }
+
+    .home4-title {
+        font-size    : 2.2rem;
+        margin-bottom: 3rem;
+    }
+
+    .home4 {
+        .home4-1-img {
+            >div {
+                height: 480px;
+            }
+        }
+
+        .home4-1-text {
+            padding: 4rem 3rem;
+
+            h2 {
+                font-size: 2.4rem;
+            }
+        }
+    }
+
+    .carouselHome6 {
+        .carousel-item {
+            height: 400px;
+        }
+    }
+
+    .home5 {
+        .home5-item-text {
+            font-size: 1.4rem;
+        }
+    }
+}
+
+@media(min-width: 1200px) {
+    .home1 {
+        padding: 5rem 0 0;
+    }
+
+    .home2 {
+        padding: 0 3rem;
+
+        .home2-banner {
+            padding: 6rem;
+
+            h3 {
+                font-size: 2.5rem;
+            }
+
+            h2 {
+                font-size: 3.6rem;
+            }
+
+            p {
+                font-size: 1.3rem;
+            }
+        }
+    }
+
+    .home3 {
+        margin : 0 3rem;
+        padding: 6rem 2rem;
+    }
+
+    .home1-text-title,
+    .home3-1-title {
+        font-size  : 1.85rem;
+        font-weight: 600;
+        line-height: 1;
+        color      : $dorado;
+    }
+
+    .home4-title {
+        font-size: 2.5rem;
+    }
+
+    .home4 {
+        .home4-1-text {
+            h2 {
+                font-size: 2.7rem;
+            }
+        }
+    }
+
+    .home5 {
+        .home5-item-text {
+            font-size: calc(1rem + 1vw);
+
+            &.mini {
+                font-size: 100%;
+            }
+        }
+    }
+
+    .home5-item1 {
+        height: 100% !important;
+    }
+
+}
+
+@media(min-width: 1600px) {
+    .slider-text-content {
+        .slider-text {
+            p {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 7.2rem;
+            }
+
+            h3 {
+                font-size: 4.5rem;
+            }
+        }
+    }
+
+    .home1 {
+        padding: 8rem 0 3rem;
+    }
+
+    .home1-text-title,
+    .home3-1-title {
+        font-size: 2.7rem;
+    }
+
+    .home1-text {
+        p {
+            font-size: 1.4rem;
+        }
+    }
+
+    .name-product {
+        h2 {
+            font-size: 2.2rem;
+        }
+
+        h3 {
+            font-size: 2.2rem;
+
+            span {
+                font-size: 1.5rem;
+            }
+        }
+    }
+
+    .home2 {
+        padding: 0 3rem;
+
+        .home2-banner {
+            h3 {
+                font-size: 4rem;
+            }
+
+            h2 {
+                font-size: 5.6rem;
+            }
+
+            p {
+                font-size: 1.7rem;
+            }
+        }
+    }
+
+    .home3 {
+        .home3-3 img {
+            padding: 0;
+        }
+    }
+
+    .home4-title {
+        font-size: 3.5rem;
+    }
+
+    .home4 {
+        padding: 2rem 3rem 0;
+
+        .home4-1-img {
+            margin-bottom: 4rem;
+
+            >div {
+                height: 600px;
+            }
+        }
+
+        .home4-1-text {
+            padding      : 4rem 4rem;
+            margin-bottom: 4rem;
+
+            h2 {
+                font-size: 4rem;
+            }
+
+            p {
+                font-size: 1.4rem;
+            }
+        }
+    }
+
+    .home5 {
+        padding: 3em 3rem;
+
+        .home5-item {
+            height: 350px;
+
+            >div {
+                font-size: 2rem;
+            }
+        }
+
+        .home5-item-text {
+            font-size: calc(2rem + 1vw);
+        }
+    }
+
+    .carouselHome6 {
+        .carousel-item {
+            height: 500px;
+        }
+    }
+}

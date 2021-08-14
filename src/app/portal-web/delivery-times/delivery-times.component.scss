@@ -1,0 +1,155 @@
+$dorado: #BE8A3E;
+
+.banner_delivery{
+    background-image: url('../../../assets/images/times/banner.png');
+    
+}
+
+.tiempos1{
+    padding: 3rem 0;
+    img{
+        width: 40px;
+    }
+    h2{
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-bottom: 1.5rem;
+        color: $dorado;
+    }
+    p{
+        font-size: 0.9rem;
+        text-align: justify;
+        color: #000;
+    }
+}
+
+.tiempos2{
+    margin-bottom: 6rem;
+    border: 3px solid $dorado;
+    border-radius: 8px;
+    & > .row{
+        border-bottom: 3px solid $dorado;
+    }
+    & > .row:last-child{
+        border-bottom: 0;
+    }
+}
+
+.tiempo2-img{
+    padding: 0 3rem 2rem;
+    img{
+        width: 150px;
+    }
+}
+
+.tiempos2-item{
+    padding: 1.5rem;
+    h2{
+        font-size: 1.4rem;
+        font-weight: bold;
+        color: $dorado;
+        margin-bottom: 2rem;
+    }
+    img{
+        width: 30px;
+    }
+    p{
+        font-size: 0.9rem;
+        text-align: justify;
+        color: #000;
+    }
+}
+
+@media(min-width: 375px){
+    .tiempos1{
+        img{
+            width: 50px;
+        }
+        h2{
+            font-size: 1.4rem;
+        }
+    }
+}
+
+@media(min-width: 768px){
+    .tiempo2-img{
+        padding: 3rem;
+        img{
+            width: 180px;
+        }
+    }
+    .tiempos2-item{
+        padding: 3rem 1.5rem;
+    }
+}
+
+@media(min-width: 992px){
+    .banner_delivery h2 {
+        padding: 10rem 1rem 8rem;
+    }
+}
+
+@media(min-width: 1200px){
+    .tiempos1{
+        img{
+            width: auto;
+        }
+        h2{
+            font-size: 1.5rem;
+        }
+        p{
+            font-size: 1rem;
+        }
+    }
+    .tiempos2-item{
+        h2{
+            font-size: 1.5rem;
+        }
+        p{
+            font-size: 1rem;
+        }
+    }
+    .tiempo2-img{
+        img{
+            width: 220px;
+        }
+    }
+}
+
+@media(min-width: 1440px){
+    .banner_delivery h2 {
+        padding: 12rem 1rem 8rem;
+    }
+}
+
+@media(min-width: 1600px){
+    .banner_delivery h2 {
+        padding: 14rem 1rem 12rem;
+    }
+    .tiempos1{
+        padding: 4rem 0;
+        h2{
+            font-size: 1.7rem;
+        }
+        p{
+            font-size: 1.2rem;
+        }
+    }
+    .tiempos2-item{
+        padding: 3rem;
+        h2{
+            font-size: 1.8rem;
+        }
+        img{
+            width: 30px;
+        }
+        p{
+            font-size: 1.2rem;
+        }
+    }
+    .tiempo2-img{
+        img{
+            width: auto;
+        }
+    }
+}

@@ -1,0 +1,32 @@
+.costos-radio-group {
+    display       : flex;
+    flex-direction: column;
+    margin        : 15px 0;
+}
+
+.costos-radio-button {
+    margin: 5px;
+}
+
+.td-input-number{
+    max-width: 70px;
+}
+
+.table-costos td{
+    vertical-align: middle;
+}
+
+.col-img-preview{
+    text-align: center;
+}
+
+
+
+@media(min-width: 992px){
+    .col-img-preview{
+        width: 175px;
+    }
+    .col-img-input{
+        width: calc(100% - 175px);
+    }
+}

@@ -1,0 +1,154 @@
+<form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+    <p>{{product}}</p>
+    <div class="row mb-4">
+        <div class="col-md-4">
+            <label class="fw-bolder form-label">Nombre:</label>
+            <input type="text" class="form-control" name="nameP" formControlName="nameP"
+                [class.is-invalid]="nameP" required>
+        </div>
+        <div class="col-md-4">
+            <label class="fw-bolder form-label">Nombre Descripción:</label>
+            <textarea name="" class="form-control" rows="3" name="nameDescription"
+                formControlName="nameDescription" [class.is-invalid]="nameDescription" required></textarea>
+        </div>
+        <div class="col-md-4">
+            <label class="fw-bolder form-label">Código:</label>
+            <input type="text" class="form-control" name="codeP" formControlName="codeP"
+                [class.is-invalid]="codeP" required>
+        </div>
+    </div>
+    <div class="row mb-4">
+        <div class="col-md-4">
+            <label class="fw-bolder mb-2">Tipo Color:</label>
+            <mat-form-field appearance="legacy" floatLabel="never" class="select-custom">
+                <mat-select [disableOptionCentering]="true" formControlName="typeColor">
+                    <mat-option value="unicolor">Unicolor</mat-option>
+                    <mat-option value="multicolor">Multicolor</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="col-md-8">
+            <label class="fw-bolder mb-2">Color:</label>
+            <div class="d-flex align-items-start">
+                <button type="button" (click)="openDialog()" mat-raised-button color="primary"
+                    class="btnAddColor">Agregar</button>
+                <mat-chip-list #chipList aria-label="Fruit selection">
+                    <mat-chip *ngFor="let color of listColors" (removed)="remove(color)" style="font-size: .7rem;">
+                        <mat-icon [style.color]="color">circle</mat-icon>
+                        {{color}}
+                        <mat-icon matChipRemove>cancel</mat-icon>
+                    </mat-chip>
+                </mat-chip-list>
+            </div>
+        </div>
+    </div>
+    <div class="row mb-4">
+        <div class="col-md-4">
+            <label class="fw-bolder mb-2">Categoría:</label>
+            <mat-form-field appearance="legacy" floatLabel="never" class="select-custom">
+                <mat-label>Seleccionar</mat-label>
+                <mat-select [disableOptionCentering]="true" multiple formControlName="category"
+                    [class.is-invalid]="category">
+                    <mat-option *ngFor="let category of listCategories" [value]="category.idcategory">
+                        {{category.categoryName}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="col-md-4">
+            <label class="fw-bolder mb-2">Festividad:</label>
+            <mat-form-field appearance="legacy" floatLabel="never" class="select-custom">
+                <mat-label>Seleccionar</mat-label>
+                <mat-select [disableOptionCentering]="true" formControlName="festivity"
+                    [class.is-invalid]="festivity">
+                    <mat-option *ngFor="let festivity of listFestivities" [value]="festivity.idsection">
+                        {{festivity.sectionName}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="col-md-4">
+            <label class="fw-bolder mb-2">Tipo de producto:</label>
+            <mat-form-field appearance="legacy" floatLabel="never" class="select-custom">
+                <mat-label>Seleccionar</mat-label>
+                <mat-select [disableOptionCentering]="true" formControlName="typeP" [class.is-invalid]="typeP">
+                    <mat-option *ngFor="let typeProduct of listTypesProducts"
+                        [value]="typeProduct.idtypeProducts">{{typeProduct.typeProductsName}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="row mb-4">
+        <div class="col-md-6">
+            <label class="fw-bolder form-label">Descripción 1:</label>
+            <textarea name="" class="form-control" rows="4" formControlName="description1"></textarea>
+        </div>
+        <div class="col-md-6">
+            <label class="fw-bolder form-label">Descripción 2:</label>
+            <textarea name="" class="form-control" rows="4" formControlName="description2"></textarea>
+        </div>
+    </div>
+    <div class="row mb-4">
+        <div class="col-12">
+            <label class="fw-bolder form-label">Historia del producto:</label>
+            <textarea name="" class="form-control" rows="4" formControlName="description3"></textarea>
+        </div>
+    </div>
+    <div class="row mb-4">
+        <p class="fw-bolder form-label">Características:</p>
+        <div class="col-12 col-md-6 px-0" formArrayName="features">
+            <div class="row mx-0 mb-3 align-items-center" [formGroupName]="i" *ngFor="let item of features.controls; let i = index;">
+                <div class="col-12 col-md-5">
+                    <input type="text" class="form-control" formControlName="featuresName" [class.is-invalid]="nameFeature(i)">
+                </div>
+                <div class="col-12 col-md-6">
+                    <input type="text" class="form-control" formControlName="featuresDetail" [class.is-invalid]="detailFeature(i)">
+                </div>
+                <div class="col-md-auto text-center px-0" *ngIf="i != 0 ? true:false">
+                    <button type="button" class="btn btnDelete" (click)="removeFeature(i)">
+                        <span class="material-icons">delete</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="">
+            <button type="button" (click)="addFeature('','')" class="btn btnAddFeature">Agregar</button>
+        </div>
+    </div>
+    <div class="row mb-4">
+        <div class="col-12 col-md-4">
+            <label class="fw-bolder form-label">Lugar de Origen:</label>
+            <input type="text" class="form-control" formControlName="originPlace">
+        </div>
+    </div>
+    <div class="row mb-4">
+        <div class="col-12">
+            <p class="fw-bolder">Adjuntar pdf:</p>
+            <p>Debe ser un archivo .pdf de 10MB como máximo.</p>
+            <div class="mb-3" *ngIf="mode == 'edit'">
+                <button type="button" mat-stroked-button color="primary">Ver archivo adjunto</button>
+                <button type="button" mat-stroked-button color="accent" class="ms-3">Eliminar
+                    archivo</button>
+            </div>
+            <div class="form-group col-md-3">
+                <label *ngIf="mode == 'edit'">Reemplazar archivo</label>
+                <div class="d-flex align-items-center">
+                    <input type="file" accept=".pdf" #pdfProd (change)="changePdf($event.target)"
+                    class="form-control input-file-280" name="pdfProduct">
+                    <button class="btn btnDelete ms-2" *ngIf="buttonDeletePdf" (click)="deletePdfProduct(pdfProd)">
+                        <span class="material-icons">delete</span>
+                    </button>
+                </div>
+            </div>
+            <div class="pt-5">
+                <button type="submit" mat-raised-button color="primary" [disabled]="loading">
+                    <div class="spinner-border text-light spinner-border-sm" role="status" *ngIf="loading">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                    {{mode == 'edit' ? 'Actualizar datos':'Guardar datos e ir a cargar imágenes'}}
+                </button>
+            </div>
+            <div class="pt-4 text-center">
+                <a [routerLink]="['/admin/product']" mat-button class="bg-light">Regresar</a>
+            </div>
+        </div>
+    </div>
+</form>

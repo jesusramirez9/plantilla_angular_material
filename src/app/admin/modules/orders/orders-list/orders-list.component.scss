@@ -1,0 +1,31 @@
+table {
+    width: 100%;
+}
+
+tr.mat-header-row {
+    background-color: #A76606;
+    
+    th{
+        color: #fff;
+    }
+}
+
+.th-opciones{
+    width: 390px;
+
+}
+.btns-actions{
+    a, button{
+        padding: .25rem .5rem;
+        font-size: .7rem;
+        border-radius: .2rem;
+    }
+}
+
+th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
+    border: 1px solid #000000;
+}
+.mat-paginator {
+    border: 1px solid #000;
+    border-top: 0;
+}

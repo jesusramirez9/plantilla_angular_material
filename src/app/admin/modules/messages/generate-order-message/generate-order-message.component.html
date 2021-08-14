@@ -1,0 +1,230 @@
+<div class="row mt-4 mx-0">
+    <div class="col-12 col-md-4 col-xl-auto">
+        <h2 class="title-page">Mensajes</h2>
+        <mat-list>
+            <mat-list-item>
+                <button mat-button>Bandeja de entrada</button>
+            </mat-list-item>
+            <mat-list-item>
+                <button mat-button>Todos</button>
+            </mat-list-item>
+            <mat-list-item>
+                <button mat-button>No leídos</button>
+            </mat-list-item>
+            <mat-list-item>
+                <button mat-button>Archivados</button>
+            </mat-list-item>
+        </mat-list>
+    </div>
+    <div class="col-12 col-md-8 col-xl">
+        <mat-card class="example-card shadow-none">
+            <mat-card-content class="pt-0">
+                <div class="row mb-3">
+                    <div class="col-12 mb-4">
+                        <h2 class="title-addproduct">Generar pedido</h2>
+                    </div>
+                    <div class="col-12 col-md-8 mb-4">
+                        <p><b>Usuario:</b> TARQUINO ACOSTA JUAN SEBASTIAN</p>
+                        <p><b>Correo:</b> jacosta@gmail.com</p>
+                        <p><b>Teléfono:</b> 987654321</p>
+                    </div>
+                    <div class="col-12 col-md-4 text-right mb-4">
+                        <p><b>Código de mensaje:</b> M0001</p>
+                    </div>
+                </div>
+        
+                <div class="row mb-5">
+                    <div class="col-12 col-md-8">
+                        <h2 class="text-dorado mb-5 font-bold col-12">Datos de pedido</h2>
+                        <div class="row">
+                            <div class="col-md-3 col-lg-4 mb-4">
+                                <label class="fw-bolder form-label">Tipo de pedido:</label>
+                                <mat-form-field appearance="legacy" floatLabel="never" class="select-custom">
+                                    <mat-label>Seleccionar</mat-label>
+                                    <mat-select [disableOptionCentering]="true">
+                                        <mat-option value="1">Normal</mat-option>
+                                        <mat-option value="2">Personalizado</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-md-7 col-lg-8 mb-4">
+                                <label class="fw-bolder mb-3 d-block">Términos de pago:</label>
+                                <mat-radio-group name="termino_pago" class="costos-radio-group">
+                                    <mat-radio-button class="" value="1" color="primary">
+                                        50% adelantado
+                                    </mat-radio-button>
+                                    <mat-radio-button class="mx-4" value="2" color="primary">
+                                        100% adelantado
+                                    </mat-radio-button>
+                                    <mat-radio-button class="" value="3" color="primary">
+                                        Personalizado
+                                    </mat-radio-button>
+                                </mat-radio-group>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3 col-lg-4 mb-4">
+                                <label class="fw-bolder form-label">Monto de pago:</label>
+                                <input type="number" class="form-control">
+                            </div>
+                            <div class="col-md-3 col-lg-4 mb-4">
+                                <label class="fw-bolder form-label">Número de cuotas:</label>
+                                <input type="number" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 mb-4">
+                                <label class="fw-bolder form-label">Dirección de envío:</label>
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="card border-dark mx-auto card-resumen">
+                            <div class="card-body">
+                                <h2 class="card-title text-center fw-bolder text-decoration-underline">Resumen de Pedido</h2>
+                                <table class="table table-borderless">
+                                    <tbody>
+                                        <tr>
+                                            <td>Subtotal:</td>
+                                            <td>500</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Costo de envío:</td>
+                                            <td>15</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Descuento:</td>
+                                            <td>0</td>
+                                        </tr>
+                                    </tbody>
+                                    <br>
+                                    <tfoot>
+                                        <tr>
+                                            <td class="fw-bolder">TOTAL:</td>
+                                            <td class="fw-bolder">515</td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-5">
+                    <div class="row">
+                        <div class="col-md-3 mb-4">
+                            <label class="fw-bolder form-label">Costo de envío:</label>
+                            <input type="number" class="form-control">
+                        </div>
+                        <div class="col-md-3 mb-4">
+                            <label class="fw-bolder form-label">Fecha aproximada de envío:</label>
+                            <input type="date" class="form-control">
+                        </div>
+                        <div class="col-md-3 mb-4">
+                            <label class="fw-bolder form-label">Descuento:</label>
+                            <input type="number" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3 mb-4">
+                            <label class="fw-bolder form-label">Nombre de empresa:</label>
+                            <input type="text" class="form-control">
+                        </div>
+                        <div class="col-md-3 mb-4">
+                            <label class="fw-bolder form-label">RUC de empresa:</label>
+                            <input type="text" class="form-control">
+                        </div>
+                        <div class="col-md-3 mb-4">
+                            <label class="fw-bolder form-label">Correo de referencia:</label>
+                            <input type="text" class="form-control">
+                        </div>
+                        <div class="col-md-3 mb-4">
+                            <label class="fw-bolder form-label">Teléfono de referencia:</label>
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-auto">
+                            <label class="fw-bolder form-label">Adjunta logo de empresa:</label>
+                            <input type="file" class="form-control input-file">
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <h2 class="text-dorado mb-5 font-bold col-12">Detalle de pedido</h2>
+                <div class="detalle-producto">
+                    <div class="col-12 text-center mb-4">
+                        <h2>Producto 1</h2>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col-md-8">
+                            <label class="fw-bolder form-label">Nombre:</label>
+                            <textarea name="" class="form-control" rows="3"></textarea>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="fw-bolder form-label">Código:</label>
+                            <input type="text" class="form-control ">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3 mb-4">
+                            <label class="fw-bolder form-label">Cantidad:</label>
+                            <input type="number" class="form-control">
+                        </div>
+                        <div class="col-md-3 mb-4">
+                            <label class="fw-bolder form-label">Precio:</label>
+                            <input type="number" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-md-6">
+                            <label class="fw-bolder form-label">Adjunta imagen:</label>
+                            <input type="file" class="form-control input-file-280">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="fw-bolder form-label">Adjunta PDF:</label>
+                            <input type="file" class="form-control input-file-280">
+                        </div>
+                    </div>
+                    <div class="pt-4 mb-4">
+                        <p class="fw-bolder">Tendrá empaque de cortesía:</p>
+                        <div>
+                            <span class="pe-2">No</span>
+                            <mat-slide-toggle color="primary">Si</mat-slide-toggle>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <label class="fw-bolder mb-2">Elegir empaque:</label>
+                        <mat-form-field appearance="legacy" floatLabel="never" class="select-custom">
+                            <mat-label>Seleccionar</mat-label>
+                            <mat-select [disableOptionCentering]="true">
+                                <mat-option value="1">Especial</mat-option>
+                                <mat-option value="2">Decorado</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col-12">
+                            <label class="fw-bolder form-label">Mensaje de la tarjeta o dedicatoria:</label>
+                            <textarea name="" class="form-control" rows="4"></textarea>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+                <div class="text-center">
+                    <button mat-stroked-button color="primary">Añadir un producto más</button>
+                </div>
+                <br><br>
+                <div class="text-right">
+                    <button mat-raised-button color="primary">Generar pedido</button>
+                </div>
+                <br><br>
+                <div class="text-center">
+                    <a mat-button class="bg-light text-dark" [routerLink]="['/admin/messages']">Ir a bandeja de entrada</a>
+                </div>
+                <br>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
+

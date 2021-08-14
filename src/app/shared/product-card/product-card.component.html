@@ -1,0 +1,39 @@
+<mat-card class="product-card">
+    <mat-card-header class="justify-content-end">
+        <mat-card-title class="title-card-product">
+            <span class="text-success text-right mb-0" *ngIf="data.productsState == 1">{{data.productStateText}}</span>
+            <span class="text-warning text-right mb-0" *ngIf="data.productsState == 0">{{data.productStateText}}</span>
+            <span class="text-danger text-right mb-0" *ngIf="data.productsState == 2">{{data.productStateText}}</span>
+        </mat-card-title>
+    </mat-card-header>
+    <div class="product-img" *ngIf="data.productsState == 0" style="background-image: url(assets/images/imagen-x.png);"></div>
+    <div class="product-img" *ngIf="data.productsState != 0" style="background-image: url({{data.productsImage}});"></div>
+    <mat-card-content class="mb-0 p-3">
+        <p class="product-description">{{data.productsName}}</p>
+    </mat-card-content>
+    <mat-card-actions class="pt-0 pb-2 text-right card-buttons">
+        <button mat-button *ngIf="false" class="px-0" (click)="goToPage()">
+            <span class="material-icons">add</span>
+        </button>
+        <button mat-button [matMenuTriggerFor]="menu" class="px-0">
+            <span class="material-icons">settings</span>
+        </button>
+        <mat-menu #menu="matMenu" xPosition="before">
+            <a mat-menu-item href="/admin/product/edit/{{data.idproducts}}">
+                <mat-icon>edit</mat-icon>
+                <span>Editar</span>
+            </a>
+            <a mat-menu-item href="/admin/product/detail/{{data.idproducts}}">
+                <mat-icon>pageview</mat-icon>
+                <span>Ver detalle</span>
+            </a>
+            <a mat-menu-item href="/admin/product/copy/{{data.idproducts}}">
+                <mat-icon>content_copy</mat-icon>
+                <span>Copiar</span>
+            </a>
+        </mat-menu>
+        <button mat-button class="px-0">
+            <span class="material-icons">delete</span>
+        </button>
+    </mat-card-actions>
+</mat-card>

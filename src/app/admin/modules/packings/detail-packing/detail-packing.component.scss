@@ -1,0 +1,37 @@
+.title-addproduct {
+    font-size  : 1.8rem;
+    line-height: normal;
+}
+
+.subtitle-addproduct {
+    font-size: 1.2rem;
+}
+
+.td-input-number {
+    max-width: 70px;
+}
+
+.table-costos {
+    td {
+        vertical-align: middle;
+        text-align    : center;
+    }
+
+    th {
+        text-align: center;
+    }
+}
+
+.img-product-detail {
+    width            : 150px;
+    height           : 150px;
+    display          : inline-block;
+    margin           : 0 1rem 1rem 0px;
+    background-size  : cover;
+    background-repeat: no-repeat;
+}
+
+.input-cantidad {
+    display: inline-block;
+    width  : 150px;
+}

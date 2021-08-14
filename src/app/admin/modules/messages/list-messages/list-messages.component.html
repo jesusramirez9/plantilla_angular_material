@@ -1,0 +1,69 @@
+<div class="row mt-4 mx-0">
+    <div class="col-12 col-md-4 col-xl-3">
+        <h2 class="title-page">Mensajes</h2>
+        <mat-list>
+            <mat-list-item>
+                <button mat-button>Bandeja de entrada</button>
+            </mat-list-item>
+            <mat-list-item>
+                <button mat-button>Todos</button>
+            </mat-list-item>
+            <mat-list-item>
+                <button mat-button>No leídos</button>
+            </mat-list-item>
+            <mat-list-item>
+                <button mat-button>Archivados</button>
+            </mat-list-item>
+        </mat-list>
+    </div>
+    <div class="col-12 col-md-8 col-xl-9">
+        <div class="pb-4 d-md-flex justify-content-between align-items-center">
+            <div class="col-12 col-md-4">
+                <mat-form-field appearance="outline" class="input-search bg-white">
+                    <mat-label>Buscar mensaje</mat-label>
+                    <input matInput placeholder="Placeholder" (keyup)="filterTable($event)" #input>
+                    <mat-icon matSuffix>search</mat-icon>
+                </mat-form-field>
+            </div>
+            <a mat-raised-button color="primary" [routerLink]="['/admin/messages/new']" class="mt-2 mt-md-0">Redactar mensaje</a>
+        </div>
+        <br>
+        <div class="mat-elevation-z8 mb-5">
+            <table mat-table [dataSource]="dataSource">
+
+                <ng-container matColumnDef="usuario">
+                    <th mat-header-cell *matHeaderCellDef>Usuario</th>
+                    <td mat-cell *matCellDef="let element"> {{element.usuario}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="asunto">
+                    <th mat-header-cell *matHeaderCellDef class="text-center">Asunto</th>
+                    <td mat-cell *matCellDef="let element" class="text-center"> {{element.asunto}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="producto">
+                    <th mat-header-cell *matHeaderCellDef class="text-center">Producto</th>
+                    <td mat-cell *matCellDef="let element" class="text-center"> {{element.producto}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="opciones">
+                    <th mat-header-cell *matHeaderCellDef class="text-center th-opciones">Opciones</th>
+                    <td mat-cell *matCellDef="let element" class="text-center ps-3 btns-actions">
+                        <a class="btn btn-success btn-sm" [routerLink]="['/admin/messages/response']">Responder</a>
+                        <button class="btn btn-dark btn-sm mx-2">Archivar</button>
+                        <button class="btn btn-warning btn-sm">Desmarcar</button>
+                    </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                <tr class="mat-row" *matNoDataRow>
+                    <td class="mat-cell" colspan="4">No hay datos que coincidan con el filtro: "{{input.value}}"</td>
+                </tr>
+            </table>
+
+            <mat-paginator [pageSizeOptions]="[5, 10, 20]"></mat-paginator>
+        </div>
+    </div>
+</div>

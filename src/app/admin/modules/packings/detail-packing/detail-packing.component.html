@@ -1,0 +1,72 @@
+<mat-card class="example-card">
+    <mat-card-content>
+        <div class="d-flex justify-content-between align-items-center">
+            <h2 class="title-addproduct">Detalle del empaque</h2>
+            <div *ngIf="!loadingData">
+                <span class="pe-2">Desactivado</span>
+                <mat-slide-toggle color="primary" [checked]="stateActive" 
+                (change)="changeState($event)" [disabled]="disabledState">Activado</mat-slide-toggle>
+            </div>
+        </div>
+        <br>
+        <p class="text-dorado mb-5 subtitle-addproduct">Imágenes del empaque</p>
+        <div class="row mb-4">
+            <div class="col-12 col-md-auto">
+                <div class="">
+                    <p class="font-bolder">Imagen principal</p>
+                </div>
+                <div class="">
+                    <div class="img-product-detail" *ngIf="image1URL == '' ? false:true"
+                        style="background-image: url({{image1URL}});">
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-auto">
+                <div class="">
+                    <p class="font-bolder">Imagen secundaria</p>
+                </div>
+                <div class="">
+                    <div class="img-product-detail" *ngIf="image2URL == '' ? false:true"
+                        style="background-image: url({{image2URL}});">
+                    </div>
+                    <div class="img-product-detail" *ngIf="image3URL == '' ? false:true"
+                        style="background-image: url({{image3URL}});">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="detail-info-general mb-5">
+            <p class="text-dorado mb-5 subtitle-addproduct">Características del empaque</p>
+            <div class="row mb-4">
+                <div class="col-12 col-md-auto me-md-4">
+                    <label class="form-label fw-bolder">Nombre:</label>
+                    <p>{{empaque.packingName}}</p>
+                </div>
+                <div class="col-12 col-md-auto me-md-4">
+                    <label class="form-label fw-bolder">Código:</label>
+                    <p>{{empaque.packingCode}}</p>
+                </div>
+                <div class="col-12 col-md-auto me-md-4">
+                    <label class="form-label fw-bolder">Tipo de empaque:</label>
+                    <p>{{empaque.packingTypeText}}</p>
+                </div>
+            </div>
+            <div class="col-12">
+                <label class="form-label fw-bolder">Descripción:</label>
+                <p>{{empaque.packingDescription}}</p>
+            </div>
+        </div>
+
+        <div class="mb-4 text-center">
+            <a mat-button class="bg-light text-dark me-4" [routerLink]="['/admin/packing']">Regresar</a>
+            <a mat-button class="bg-light text-dark" [routerLink]="['/admin/packing/edit/'+empaque.idpacking]">Editar este empaque</a>
+        </div>
+
+        <div class="bodyBlock" *ngIf="loadingData">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>

@@ -1,0 +1,30 @@
+$dorado: #BE8A3E;
+
+.marcasc {
+    padding: 4rem 0;
+}
+
+.marcasc-title {
+    font-size  : 1.5rem;
+    font-weight: 600;
+    line-height: 1;
+    color      : $dorado;
+}
+
+@media(min-width: 1200px) {
+    .marcasc-title {
+        font-size  : 1.85rem;
+        font-weight: 600;
+        line-height: 1;
+        color      : $dorado;
+    }
+}
+
+@media(min-width: 1600px) {
+    .marcasc {
+        padding: 6rem 0;
+    }
+    .marcasc-title {
+        font-size: 2.7rem;
+    }
+}

@@ -1,0 +1,71 @@
+$dorado: #BE8A3E;
+
+.img-product {
+    position           : relative;
+    width              : auto;
+    background-position: center;
+    background-size    : cover;
+    background-color   : #FFEBCF;
+    border             : 1px solid $dorado;
+    border-radius      : 8px;
+
+    &::after {
+        content       : '';
+        display       : block;
+        padding-bottom: 100%;
+    }
+}
+
+.name-product {
+    h2 {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: $dorado;
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+        font-weight: 500;
+        color: $dorado;
+        margin-bottom: 0;
+
+        span {
+            font-size: 1.1rem;
+        }
+    }
+}
+
+@media(min-width: 768px){
+    .name-product {
+        h2,h3 {
+            font-size: 1rem;
+        }
+        h3 span{
+            font-size: 0.9rem;
+        }
+    }
+}
+
+@media(min-width: 1200px){
+    .name-product {
+        h2,h3 {
+            font-size: 1.2rem;
+        }
+        h3 span {
+            font-size: 1rem;
+        }
+    }
+}
+
+@media(min-width: 1900px){
+    .name-product {
+        h2,h3 {
+            font-size: 1.5rem;
+        }
+        h3 span {
+            font-size: 1.2rem;
+        }
+    }
+}

@@ -1,0 +1,239 @@
+$dorado: #BE8A3E;
+
+.banner_nosotros{
+    background-image: url('../../../assets/images/about/banner_nosotros.png');
+}
+
+.content-nosotros{
+    width: 95%;
+    margin: auto;
+}
+
+.nosotros1{
+    padding: 3rem 1rem 4rem;
+    p{
+        font-size: 1rem;
+        text-align: justify;
+        color: #000;
+        text-align-last: center;
+    }
+    img{
+        border-radius: 8px;
+    }
+}
+
+.home4 {
+    .home4-1-img {
+        margin-bottom: 3rem;
+        >div {
+            height             : 250px;
+            background-position: center;
+            background-size    : cover;
+            border-radius      : 8px;
+        }
+    }
+
+    .home4-1-text {
+        padding: 0 1rem;
+        h2 {
+            font-size    : 1.55rem;
+            font-weight  : 700;
+            color        : $dorado;
+            line-height  : 1;
+            margin-bottom: 2rem;
+        }
+        p {
+            font-size: 1rem;
+            text-align: justify;
+            color: #000;
+            margin-bottom: 2.5rem;
+        }
+    }
+}
+
+.nosotros3{
+    padding: 0 1rem;
+    h2{
+        font-size: 1.6rem;
+        color: $dorado;
+        margin: 0;
+        font-weight: bold;
+    }
+}
+
+.video-nosotros{
+    height: 200px;
+    margin-bottom: 3rem;
+    border-radius: 8px;
+}
+
+@media(min-width: 375px){
+    .home4 {
+        .home4-1-text {
+            h2 {
+                font-size: 1.8rem;
+            }
+        }
+    }
+    .video-nosotros{
+        height: 300px;
+    }
+    .nosotros3{
+        h2{
+            font-size: 1.8rem;
+        }
+    }
+}
+
+@media(min-width: 425px){
+    .home4 {
+        .home4-1-text {
+            h2 {
+                font-size: 2.2rem;
+            }
+        }
+    }
+    .nosotros3{
+        h2{
+            font-size: 2.2rem;
+        }
+    }
+}
+
+@media(min-width: 768px){
+    .content-nosotros{
+        width: 90%;
+    }
+    .nosotros1{
+        padding: 3rem 0;
+        p{
+            font-size: 1.1rem;
+        }
+    }
+    .home4 {
+        .home4-1-img {
+            >div {
+                height: 350px;
+            }
+        }
+        .home4-1-text {
+            padding: 3rem 1rem;
+            h2 {
+                font-size: 2rem;
+            }
+            p{
+                font-size: 1.1rem;
+            }
+        }
+    }
+    .video-nosotros{
+        height: 400px;
+        margin-bottom: 4rem;
+    }
+    
+}
+
+@media(min-width: 992px){
+    .content-nosotros{
+        width: 85%;
+    }
+    .home4 {
+        .home4-1-img {
+            >div {
+                height: 350px;
+            }
+        }
+        .home4-1-text {
+            h2 {
+                font-size: 2.4rem;
+            }
+        }
+    }
+    .video-nosotros{
+        height: 500px;
+    }
+    .nosotros3{
+        h2{
+            font-size: 2.5rem;
+        }
+    }
+}
+
+@media(min-width: 1200px){
+    .home4 {
+        .home4-1-img {
+            >div {
+                height: 420px;
+            }
+        }
+        .home4-1-text {
+            padding: 4rem 3rem;
+            h2 {
+                font-size: 2.7rem;
+            }
+            p{
+                font-size: 1.3rem;
+            }
+        }
+    }
+    .video-nosotros{
+        height: 600px;
+    }
+    .nosotros3{
+        h2{
+            font-size: 2.8rem;
+        }
+    }
+}
+
+@media(min-width: 1440px){
+    .nosotros1{
+        p{
+            font-size: 1.3rem;
+        }
+    }
+    .nosotros3{
+        h2{
+            font-size: 3.2rem;
+        }
+    }
+}
+
+@media(min-width: 1600px){
+    .nosotros1{
+        padding: 4rem 0 5rem;
+        p{
+            font-size: 1.5rem;
+        }
+    }
+    .home4 {
+        .home4-1-img {
+            margin-bottom: 4rem;
+
+            >div {
+                height: 490px;
+            }
+        }
+
+        .home4-1-text {
+            padding      : 4rem 4rem;
+            margin-bottom: 4rem;
+
+            h2 {
+                font-size: 4rem;
+            }
+            p {
+                font-size: 1.5rem;
+            }
+        }
+    }
+    .video-nosotros{
+        height: 800px;
+        margin-bottom: 5rem;
+    }
+    .nosotros3{
+        h2{
+            font-size: 4.2rem;
+        }
+    }
+}

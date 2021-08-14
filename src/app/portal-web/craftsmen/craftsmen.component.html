@@ -1,0 +1,47 @@
+<div class="section_general">
+    <!-- BANNER ARTESANOS -->
+    <div class="banner banner_artesanos">
+        <h2><span>Artesanos</span></h2>
+    </div>
+
+    <div class="content-artesanos">
+        <!-- ARTESANOS 1 -->
+        <div class="artesano1">
+            <div class="row mx-0">
+                <div class="col-md-6 ps-md-0 px-0 py-4 pe-md-4 py-md-5">
+                    <h2 class="artesano_h2">Impacto Social</h2>
+                    <p class="artesano_p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit culpa placeat sed eveniet praesentium assumenda. Dignissimos iste magni, suscipit recusandae veniam neque exercitationem saepe, ab voluptatum molestias aliquam perferendis deserunt, dolorem tempore dicta architecto quibusdam corporis expedita dolore quam facere ipsa. Maiores, in aspernatur! Nam vitae minima molestiae distinctio aperiam?</p>
+                </div>
+                <div class="col-md-6 artesano1_img">
+
+                </div>
+            </div>
+        </div>
+
+        <!-- ARTESANOS 2 -->
+        <div class="artesano2">
+            <h2 class="artesano_h2">Nuestro Equipo</h2>
+            <p class="artesano_p mb-4 mb-md-5">Conoce más cerca de nuestros artesanos.</p>
+            <div class="row">
+                <div class="col-md-4 col-lg-3 mb-5" *ngFor="let item of [1,2,3,4]">
+                    <a class="d-block" href="/artesanos/1">
+                        <div class="img_artesano" [style.backgroundImage]="'url(../../../../../assets/images/craftsmen/artesano01.jpg)'"></div>
+                        <div class="text_artesano">
+                            <h2 class="text-center">Angel Román</h2>
+                            <p class="mb-0 text-center">CERAMISTA</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 col-lg-3 mb-5" *ngFor="let item of [1,2,3,4]">
+                    <a class="d-block" href="/artesanos/1">
+                        <div class="img_artesano" [style.backgroundImage]="'url(../../../../../assets/images/craftsmen/artesano02.jpg)'"></div>
+                        <div class="text_artesano">
+                            <h2 class="text-center">Julio Martinez</h2>
+                            <p class="mb-0 text-center">JOYERO</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

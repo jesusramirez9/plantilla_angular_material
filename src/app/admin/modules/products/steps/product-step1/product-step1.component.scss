@@ -1,0 +1,29 @@
+.costos-radio-group {
+    display       : flex;
+    flex-direction: column;
+    margin        : 15px 0;
+}
+
+.costos-radio-button {
+    margin: 5px;
+}
+
+.td-input-number{
+    max-width: 70px;
+}
+
+.table-costos td{
+    vertical-align: middle;
+}
+
+.btnAddColor{
+    font-size: .8rem;
+    margin-right: .5rem;
+}
+.btnAddFeature{
+    font-size: .8rem;
+    background-color: #ccc;
+}
+.form-control{
+    font-size: .9rem;
+}

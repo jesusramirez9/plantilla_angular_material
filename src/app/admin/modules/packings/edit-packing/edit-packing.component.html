@@ -1,0 +1,108 @@
+<!-- Informacion general -->
+<mat-card class="example-card shadow-none">
+    <mat-card-content>
+        <form [formGroup]="packingForm" (ngSubmit)="onSubmit()">
+            <h2 class="title-addproduct">Editar un empaque</h2>
+            <br>
+            <p class="text-dorado mb-5 subtitle-addproduct">Características del empaque</p>
+            <div class="row mb-4">
+                <div class="col-md-4">
+                    <label class="fw-bolder form-label">Nombre:</label>
+                    <input type="text" class="form-control" formControlName="nameP" [class.is-invalid]="nameP" required>
+                </div>
+                <div class="col-md-4">
+                    <label class="fw-bolder form-label">Código:</label>
+                    <input type="text" class="form-control" formControlName="codeP" [class.is-invalid]="codeP" required>
+                </div>
+                <div class="col-md-4">
+                    <label class="fw-bolder form-label">Tipo:</label>
+                    <mat-form-field appearance="legacy" floatLabel="never" class="select-custom">
+                        <mat-label>Seleccionar</mat-label>
+                        <mat-select [disableOptionCentering]="true" formControlName="typeP" [class.is-invalid]="typeP" required>
+                            <mat-option value="especial">Empaque especial (aplica costo)</mat-option>
+                            <mat-option value="cortesia">Empaque de cortesía (no aplica costo)</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row mb-4">
+                <div class="col-12">
+                    <label class="fw-bolder mb-2">Descripción:</label>
+                    <textarea class="form-control" rows="4" formControlName="descriptionP" [class.is-invalid]="descriptionP" required></textarea>
+                </div>
+            </div>
+            <br><br>
+            <p class="text-dorado mb-5 subtitle-addproduct">Imágenes del empaque</p>
+            <div class="row mb-4">
+                <div class="col-12">
+                    <p class="fw-bolder">Adjuntar imágenes</p>
+                    <p class="mb-4">Debe ser un archivo .jpg, .gif o .png de 10MB como máximo y de al menos 400 por 400
+                        píxeles.</p>
+                    <div class="row align-items-start">
+                        <div class="col-md-6 row mx-0">
+                            <label class="fw-bolder mb-2">Imagen principal:</label>
+                            <div class="col-auto mb-4" *ngIf="!image1Delete">
+                                <div class="img-preview mx-auto mb-2"
+                                    style="background-image: url({{image1URL}});">
+                                </div>
+                                <button type="button" mat-raised-button color="accent" (click)="deleteImgPreview1()">Eliminar archivo</button>
+                            </div>
+                            <div class="col-auto mb-4">
+                                <label class="fw-bolder mb-2">Reemplazar archivo</label>
+                                <app-input-file (changeImage)="changeImagen($event, 'image1')" nameInput="image1"
+                                    (deleteImage)="deleteImagen($event, 'image1')"></app-input-file>
+                            </div>
+                        </div>
+                        <div class="col-md-6 row mx-0">
+                            <label class="fw-bolder mb-2">Imagen secundaria:</label>
+                            <div class="col-12 row">
+                                <div class="col-auto mb-4" *ngIf="!image2Delete">
+                                    <div class="img-preview mx-auto mb-2"
+                                        style="background-image: url({{image2URL}});">
+                                    </div>
+                                    <button type="button" mat-raised-button color="accent" (click)="deleteImgPreview2()">Eliminar archivo</button>
+                                </div>
+                                <div class="col-auto mb-4">
+                                    <label class="fw-bolder mb-2">Reemplazar archivo</label>
+                                    <app-input-file (changeImage)="changeImagen($event, 'image2')" nameInput="image2"
+                                        (deleteImage)="deleteImagen($event, 'image2')">
+                                    </app-input-file>
+                                </div>
+                            </div>
+                            <div class="col-12 row">
+                                <div class="col-auto mb-4" *ngIf="!image3Delete">
+                                    <div class="img-preview mx-auto mb-2"
+                                        style="background-image: url({{image3URL}});">
+                                    </div>
+                                    <button type="button" mat-raised-button color="accent" (click)="deleteImgPreview3()">Eliminar archivo</button>
+                                </div>
+                                <div class="col-auto mb-4">
+                                    <label class="fw-bolder mb-2">Reemplazar archivo</label>
+                                    <app-input-file (changeImage)="changeImagen($event, 'image3')" nameInput="image3"
+                                        (deleteImage)="deleteImagen($event, 'image3')">
+                                    </app-input-file>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pt-4">
+                        <button type="submit" mat-raised-button color="primary" [disabled]="loading">
+                            <div class="spinner-border text-light spinner-border-sm" role="status" *ngIf="loading">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                            Actualizar datos
+                        </button>
+                    </div>
+                    <div class="pt-4 text-center">
+                        <a [routerLink]="['/admin/packing']" mat-button class="bg-light text-dark">Regresar</a>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div class="bodyBlock" *ngIf="loadingData">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>

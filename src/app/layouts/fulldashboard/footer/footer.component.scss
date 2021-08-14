@@ -1,0 +1,127 @@
+.footer-pages{
+    background-color: #C38F46;
+    padding: 3rem 0rem 0;
+
+    .col-footer{
+        padding: 1rem 0.8rem;
+
+        div{
+            padding-bottom: .6rem;
+        }
+        h3{
+            font-size: 0.9rem;
+            color: #fff;
+            font-weight: 600;
+        }
+        a{
+            font-size: 0.85rem;
+            color: #fff !important;
+        }
+    }
+
+    .footer-page2{
+        span,a{
+            display: inline-block;
+            font-size: .8rem;
+            color: #fff !important;
+        }
+    }
+}
+.footer-redes img{
+    width: 25px;
+}
+.footer-payment img{
+    width: 40px;
+}
+
+.menuFooterMovil{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 0.5rem 2rem;
+    background-color: #c38f46;
+    box-shadow: 0 1px 5px 0px #3c3c3c;
+
+    button{
+        outline: none;
+        box-shadow: none;
+    }
+    img{
+        width: 35px;
+    }
+}
+
+@media(min-width: 375px){
+    .footer-pages{
+        .col-footer{
+            padding: 1rem 1.5rem;
+        }
+    }    
+}
+
+@media(min-width: 425px){
+    .footer-pages{
+        .col-footer{
+            padding: 1rem 2rem;
+        }
+    }
+}
+
+@media(min-width: 768px){
+    .footer-pages{
+        .col-footer{
+            padding: 1rem 1rem;
+        }
+    }
+    .col-account{
+        padding: 1.5rem 4rem !important;
+    }
+}
+
+@media(min-width: 1200px){
+    .footer-pages{
+        padding: 3rem 0rem 0;
+    
+        .col-footer{
+            h3{
+                font-size: 1rem;
+            }
+            a{
+                font-size: 0.9rem;
+            }
+        }
+    
+        .footer-page2{
+            span,a{
+                font-size: 0.8rem;
+            }
+        }
+    }
+}
+
+@media(min-width:1600px) {
+    .footer-pages{
+        padding: 3rem 0rem 0;
+    
+        .col-footer{
+            padding: 1.5rem 1rem;
+    
+            h3{
+                font-size: 1.5rem;
+            }
+            a{
+                font-size: 1.3rem;
+            }
+        }
+    
+        .footer-page2{
+            span,a{
+                font-size: 1rem;
+            }
+        }
+    }
+
+    .footer-redes img, .footer-payment img{
+        width: auto;
+    }
+}

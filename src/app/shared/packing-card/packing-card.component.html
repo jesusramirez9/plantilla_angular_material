@@ -1,0 +1,32 @@
+<mat-card class="product-card" *ngIf="visible">
+    <mat-card-header class="justify-content-end">
+        <mat-card-title class="title-card-product">
+            <span class="text-success text-right mb-0" *ngIf="data.packingState == 1">Empaque {{data.packingStateText}}</span>
+            <span class="text-warning text-right mb-0" *ngIf="data.packingState == 0">Empaque {{data.packingStateText}}</span>
+            <span class="text-danger text-right mb-0" *ngIf="data.packingState == 2">Empaque {{data.packingStateText}}</span>
+        </mat-card-title>
+    </mat-card-header>
+    <div class="product-img" *ngIf="data.packingState == 0" style="background-image: url(assets/images/imagen-x.png);"></div>
+    <div class="product-img" *ngIf="data.packingState != 0" style="background-image: url({{data.image1}});"></div>
+    <mat-card-content class="mb-0">
+        <p>{{data.packingName}}</p>
+    </mat-card-content>
+    <mat-card-actions class="pt-0 pb-2 text-right card-buttons">
+        <button mat-button [matMenuTriggerFor]="menu" class="px-0">
+            <span class="material-icons">settings</span>
+        </button>
+        <mat-menu #menu="matMenu" xPosition="before">
+            <a mat-menu-item href="/admin/packing/edit/{{data.idpacking}}">
+                <mat-icon>edit</mat-icon>
+                <span>Editar</span>
+            </a>
+            <a mat-menu-item href="/admin/packing/detail/{{data.idpacking}}">
+                <mat-icon>pageview</mat-icon>
+                <span>Ver detalle</span>
+            </a>
+        </mat-menu>
+        <button mat-button class="px-0" (click)="deleteP(data.idpacking!)" *ngIf="data.packingState != 0">
+            <span class="material-icons">delete</span>
+        </button>
+    </mat-card-actions>
+</mat-card>

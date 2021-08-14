@@ -1,0 +1,138 @@
+<div class="row mt-4 mx-0">
+    <div class="col-12 col-md-4 col-xl-auto">
+        <h2 class="title-page">Mensajes</h2>
+        <mat-list>
+            <mat-list-item>
+                <button mat-button>Bandeja de entrada</button>
+            </mat-list-item>
+            <mat-list-item>
+                <button mat-button>Todos</button>
+            </mat-list-item>
+            <mat-list-item>
+                <button mat-button>No leídos</button>
+            </mat-list-item>
+            <mat-list-item>
+                <button mat-button>Archivados</button>
+            </mat-list-item>
+        </mat-list>
+    </div>
+    <div class="col-12 col-md-8 col-xl">
+        <mat-card class="example-card shadow-none">
+            <mat-card-content class="pt-0">
+                <div class="row mb-3">
+                    <div class="col-12 col-md-8 mb-4">
+                        <p><b>Asunto:</b> Compra de producto</p>
+                        <p><b>Producto:</b> Tazas de barro artesanales de la región de Puno</p>
+                        <p><b>Código de producto:</b> PA001</p>
+                    </div>
+                    <div class="col-12 col-md-4 text-right mb-4">
+                        <div class="img-product-detail"
+                            style="background-image: url(https://material.angular.io/assets/img/examples/shiba2.jpg);">
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="d-flex justify-content-between mb-3 align-items-center">
+                    <p class="mb-0"><b>Código de mensaje:</b> M0001</p>
+                    <a mat-raised-button color="primary" [routerLink]="['/admin/messages/generateOrder']">Generar Pedido</a>
+                </div>
+        
+                <div class="card border-dark mb-5 card-messages">
+                    <div class="card-body bg-light">
+                        <div class="col-12 col-md-6 pe-md-4">
+                            <p class="card-text">TARQUINO ACOSTA JUAN SEBASTIAN</p>
+                            <div class="bg-white p-2 px-3 mb-4">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, excepturi est quaerat voluptatum
+                                voluptates nisi minus vitae quisquam totam laborum facilis nam in omnis architecto aperiam natus
+                                nihil! Molestias, dolore.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body bg-light border-top-card">
+                        <div class="col-12 col-md-6 ms-auto ps-md-4">
+                            <p class="card-text text-right">Piska</p>
+                            <div class="bg-white p-2 px-3 mb-4">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, excepturi est quaerat voluptatum
+                                voluptates nisi minus vitae quisquam totam laborum facilis nam in omnis architecto aperiam natus
+                                nihil! Molestias, dolore.
+                            </div>
+                            <div class="text-right mt-3">
+                                <div class="img-product-msg"
+                                    style="background-image: url(https://material.angular.io/assets/img/examples/shiba2.jpg);">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body bg-light border-top-card">
+                        <div class="col-12 col-md-6 pe-md-4">
+                            <p class="card-text">TARQUINO ACOSTA JUAN SEBASTIAN</p>
+                            <div class="bg-white p-2 px-3 mb-4">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, excepturi est quaerat voluptatum
+                                voluptates nisi minus vitae quisquam totam laborum facilis nam in omnis architecto aperiam natus
+                                nihil! Molestias, dolore.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body bg-light border-top-card">
+                        <div class="col-12 col-md-6 ms-auto ps-md-4">
+                            <p class="card-text text-right">Piska</p>
+                            <div class="bg-white p-2 px-3 mb-4">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, excepturi est quaerat.
+                            </div>
+                            <div class="text-right">
+                                <button mat-flat-button class="mb-4 btn-link">Ver archivo adjunto</button>
+                                <p class="mt-3">Se añadio un color</p>
+                                <div class="text-right">
+                                    <div class="contet-color" style="background-color: blue;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+        
+                <form [formGroup]="mensajeForm">
+                    <div class="row mb-4">
+                        <div class="col-12">
+                            <label class="fw-bolder form-label">Mensaje:</label>
+                            <angular-editor placeholder="Escriba el mensaje" formControlName="mensajeText"
+                                [config]="editorConfig"></angular-editor>
+                        </div>
+                        <div class="mt-3 mb-4 row">
+                            <div class="col-12 col-md-4">
+                                <div class="form-group">
+                                    <label class="form-label font-bolder">Color:</label>
+                                    <div class="d-block">
+                                        <mat-form-field class="input-color">
+                                            <input type="color" matInput>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <div class="form-group">
+                                    <label class="form-label font-bolder">Archivo:</label>
+                                    <input type="file" class="form-control input-file-280">
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <div class="form-group">
+                                    <label class="form-label font-bolder">Imagen:</label>
+                                    <input type="file" class="form-control input-file-280">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 mb-5 text-right">
+                        <button type="submit" mat-raised-button color="primary">Enviar mensaje</button>
+                    </div>
+                </form>
+                <br>
+                <div class="text-center">
+                    <a mat-button class="bg-light text-dark" [routerLink]="['/admin/messages']">Ir a bandeja de entrada</a>
+                </div>
+                <br>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

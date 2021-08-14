@@ -1,0 +1,44 @@
+$dorado: #BE8A3E;
+
+.banner_contacto{
+    background-image: url('../../../assets/images/contact/banner.png');
+}
+
+.contacto1{
+    padding: 3rem 1rem 5rem;
+
+    .form-field-contact{
+        font-size: 1rem;
+        .mat-form-field-underline{
+            background-color: $dorado;
+        }
+    }
+}
+
+@media(min-width: 992px){
+    .banner_contacto h2 {
+        padding: 10rem 1rem 8rem;
+    }
+}
+
+@media(min-width: 1440px){
+    .banner_contacto h2 {
+        padding: 12rem 1rem 8rem;
+    }
+    .contacto1{
+        .form-field-contact{
+            font-size: 1.1rem;
+        }
+    }
+}
+
+@media(min-width: 1600px){
+    .banner_contacto h2 {
+        padding: 14rem 1rem 12rem;
+    }
+    .contacto1{
+        .form-field-contact{
+            font-size: 1.2rem;
+        }
+    }
+}

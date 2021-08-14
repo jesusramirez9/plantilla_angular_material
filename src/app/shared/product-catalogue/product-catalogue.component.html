@@ -1,0 +1,7 @@
+<a href="/regalosCorporativos/{{producto.id}}" class="d-block">
+    <div class="img-product" [style.backgroundImage]="'url('+producto.image+')'"></div>
+    <div class="name-product text-center">
+        <h2>{{producto.name}}</h2>
+        <h3><span class="pe-2">S/</span>{{producto.price | number:'1.1-2'}}</h3>
+    </div>
+</a>

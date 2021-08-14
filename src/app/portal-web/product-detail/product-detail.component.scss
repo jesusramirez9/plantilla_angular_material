@@ -1,0 +1,366 @@
+$dorado: #BE8A3E;
+
+.banner_detalle{
+    background-image: url('../../../assets/images/detailProduct/top.png');
+}
+
+.content-detalle{
+    width: 90%;
+    margin: auto;
+}
+
+.detalle1{
+    padding: 1rem 0 3rem;
+}
+.btn_img_mini, .img_producto_bg{
+    background-position: center;
+    background-size: cover;
+    width: auto;
+    position: relative;
+    border: 1px solid $dorado;
+    border-radius: 8px;
+
+    &::after{
+        content: '';
+        display: block;
+        padding-bottom: 100%;
+    }
+}
+.btn_img_mini{
+    width: 80px;
+    margin-bottom: 1rem;
+    display: block;
+    opacity: .5;
+    &.active{
+        opacity: 1;
+    }
+}
+.rango_precios{
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid $dorado;
+    border-radius: 8px;
+    padding: 0;
+    overflow: hidden;
+}
+.rango_img{
+    padding: 8px 12px;
+    background-color: $dorado;
+    img{
+        width: 9px;
+    }
+}
+.rango_text{
+    padding: 0 10px;
+    font-size: .8rem;
+    color: $dorado;
+    font-weight: 500;
+    line-height: normal;
+}
+.col_stock{
+    display: flex;
+    align-items: center;
+    img{
+        width: 16px;
+    }
+    span{
+        font-size: 0.8rem;
+        margin-left: 5px;
+    }
+}
+.precio_product{
+    h2{
+        font-size: 2.1rem;
+        font-weight: 700;
+        color: $dorado;
+        margin-bottom: 2px;
+    }
+}
+.product_precio1{
+    justify-content: space-between;
+    align-items: center;
+}
+.product_title{
+    font-size: 1.8rem;
+    color: $dorado;
+    font-weight: 600;
+}
+.product_description{
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+}
+.amount_cart{
+    button{
+        font-size: 1.8rem;
+        background-color: #BE8A3E;
+        color: #fff;
+        line-height: 1;
+        width: 35px;
+        padding: initial;
+    }
+    .btn-group div{
+        border-top: 1px solid $dorado;
+        border-bottom: 1px solid $dorado;
+        font-weight: 600;
+        color: $dorado;
+        font-size: 1.5rem;
+        line-height: 1.1;
+        width: 60px;
+        cursor: inherit;
+    }
+}
+.opcion_producto {
+    align-items: center;
+    p{
+        color: $dorado;
+        font-weight: 500;
+    }
+    span{
+        color: #7d7d7d;
+    }
+    div{
+        width: 45px;
+        margin-right: 8px;
+    }
+    .img_garantia{
+        padding: 0 10px;
+    }
+}
+.text_cotizar{
+    margin-top: 3rem;
+
+    .product_description{
+        color: $dorado;
+        font-weight: 500;
+        text-align: left;
+    }
+}
+#description p{
+    font-size: 0.9rem;
+    text-align: justify;
+}
+.titulo_caract{
+    font-weight: 500;
+}
+.nav-link{
+    font-weight: 500;
+    color: #67757c;
+    font-size: 1rem;
+}
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    color: $dorado;
+    background-color: #fff;
+    border-color: #fff #fff $dorado;
+}
+.opiniones_content{
+    border: 1px solid $dorado;
+    border-radius: 8px;
+    padding: 1.5rem 2rem;
+}
+.titulo_opiniones{
+    font-size: 1rem;
+    color: $dorado;
+    font-weight: 600;
+    margin-top: 2px;
+}
+.icon_start{
+    width: 18px;
+    margin: 0 2px;
+}
+.icon_person{
+    background-color: $dorado;
+    border-radius: 100%;
+    display: inline-flex;
+    line-height: 0;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    min-width: 30px;
+    height: 30px;
+
+    mat-icon{
+        color: #fff;
+    }
+}
+.item_opinion{
+    display: flex;
+    align-items: flex-start;
+}
+.btn-pag{
+    color: #67757c;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 3px 13px;
+    border: 1px solid transparent;
+    &.active{
+        color: $dorado;
+        border-color: $dorado;
+    }
+}
+.btn_download{
+    display: inline-block;
+    padding: 5px 15px;
+    color: $dorado;
+    font-weight: 500;
+    border: 1px solid $dorado;
+    border-radius: 8px;
+    transition: all 0.3s;
+
+    &:hover{
+        color: #fff;
+        background-color: $dorado;
+        transition: all 0.3s;
+    }
+}
+.title_similares{
+    font-size: 1.5rem;
+    color: $dorado;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+.detalle3{
+    padding-bottom: 4rem;
+}
+.nav_bread{
+    --bs-breadcrumb-divider: '>';
+    font-size: 1rem;
+    margin-bottom: 2rem;
+
+    .breadcrumb-item{
+        a{
+            color: $dorado;
+            font-weight: 500;
+        }
+        &.active a{
+            color: #67757c;
+        }
+    }
+}
+.precio_product{
+    margin-bottom: 1rem;
+}
+.img_minis{
+    display: flex;
+    button{
+        margin-right: 8px;
+    }
+}
+
+@media(min-width: 375px){
+    .product_title{
+        font-size: 2rem;
+    }
+}
+
+@media(min-width: 425px){
+    
+}
+@media(min-width: 768px){
+    .content-detalle{
+        width: 90%;
+    }
+    .detalle1{
+        padding: 2rem 0 3rem;
+    }
+}
+
+@media(min-width: 992px){
+    .banner_detalle h2 {
+        padding: 10rem 1rem 8rem;
+    }
+    .detalle1{
+        padding: 3rem 0;
+    }
+    .product_title{
+        font-size: 2.2rem;
+    }
+    .product_description{
+        font-size: 1rem;
+    }
+}
+
+@media(min-width: 1200px){
+    .detalle1{
+        padding: 4rem 0;
+    }
+    .product_title{
+        font-size: 2.8rem;
+    }
+    .precio_product{
+        margin-bottom: 0;
+    }
+    .img_minis{
+        display: block;
+        button{
+            margin-right: 0;
+        }
+    }
+}
+
+@media(min-width: 1440px){
+    .banner_detalle h2 {
+        padding: 12rem 1rem 8rem;
+    }
+    .content-detalle{
+        width: 85%;
+    }
+    .product_title{
+        font-size: 3rem;
+    }
+    .titulo_opiniones{
+        font-size: 1.05rem;
+    }
+    .title_similares{
+        font-size: 1.8rem;
+    }
+}
+
+@media(min-width: 1600px){
+    .banner_detalle h2 {
+        padding: 14rem 1rem 12rem;
+    }
+    .nav_bread{
+        font-size: 1.1rem;
+    }
+    .btn_img_mini{
+        width: 95px;
+    }
+    .product_title{
+        font-size: 3.4rem;
+    }
+    .product_description{
+        font-size: 1.1rem;
+    }
+    .precio_product{
+        h2{
+            font-size: 2.5rem;
+        }
+    }
+    .col_stock{
+        span{
+            font-size: 0.9rem;
+        }
+    }
+}
+
+@media(min-width: 1900px){
+    .nav_bread{
+        font-size: 1.2rem;
+    }
+    .product_title{
+        font-size: 3.6rem;
+    }
+    .product_description{
+        font-size: 1.2rem;
+    }
+    .nav-link{
+        font-size: 1.1rem;
+    }
+    #description p{
+        font-size: 1rem;
+    }
+    .titulo_opiniones{
+        font-size: 1.2rem;
+    }
+}

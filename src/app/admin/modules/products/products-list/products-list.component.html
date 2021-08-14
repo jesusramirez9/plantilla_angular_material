@@ -1,0 +1,42 @@
+<div class="row mt-4 mx-0 px-3">
+    <div class="col-12 col-md-4 col-xl-3 overflow-hidden mb-4">
+        <h2 class="title-page">Productos</h2>
+        <mat-list class="list-options">
+            <mat-list-item>
+                <button mat-button [class.active]="buttonActive === 9" (click)="getAllProducts()">Ver Todos</button>
+            </mat-list-item>
+            <mat-list-item>
+                <button mat-button [class.active]="buttonActive === 1" (click)="getActivatedProducts()">Ver solo activados</button>
+            </mat-list-item>
+            <mat-list-item>
+                <button mat-button [class.active]="buttonActive === 2" (click)="getDisabledProducts()">Ver solo desactivados</button>
+            </mat-list-item>
+            <mat-list-item>
+                <button mat-button [class.active]="buttonActive === 0" (click)="getIncompleteProducts()">Ver Incompletos</button>
+            </mat-list-item>
+        </mat-list>
+    </div>
+    <div class="col-12 col-md-8 col-xl-9 px-0">
+        <div class="pb-4 d-md-flex justify-content-between align-items-center">
+            <div class="col-12 col-md-4 mb-3">
+                <mat-form-field appearance="outline" class="input-search">
+                    <mat-label>Buscar producto</mat-label>
+                    <input matInput placeholder="Placeholder">
+                    <mat-icon matSuffix>search</mat-icon>
+                </mat-form-field>
+            </div>
+            <a mat-raised-button color="primary" [routerLink]="['/admin/product/add']">Agregar nuevo producto</a>
+        </div>
+
+        <div class="col-12">
+            <mat-spinner *ngIf="loading" diameter="80" class="mx-auto"></mat-spinner>
+            <h2 *ngIf="msgNoData">No se encontraron resultados.</h2>
+        </div>
+
+        <div class="pb-3 row" *ngIf="!loading">
+            <div class="col-12 col-md-6 col-lg-4 col-xl-3 px-0" *ngFor="let item of listProducts">
+                <app-product-card labelHeader="Producto activado" [data]="item"></app-product-card>
+            </div>
+        </div>
+    </div>
+</div>

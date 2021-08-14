@@ -1,0 +1,14 @@
+<button [matMenuTriggerFor]="profile" mat-icon-button class="m-r-5"> <img src="assets/images/users/1.jpg" alt="user" class="profile-pic"> </button>
+<mat-menu #profile="matMenu" class="mymegamenu">
+    <button mat-menu-item disabled>Piska - Administrador</button>
+    <button mat-menu-item [routerLink]="['/admin/product']">
+        <mat-icon>dashboard</mat-icon> Productos </button>
+    <button mat-menu-item [routerLink]="['/admin/orders']">
+        <mat-icon>shopping_cart</mat-icon> Compras y pedidos </button>
+    <button mat-menu-item [routerLink]="['/admin/packing']">
+        <mat-icon>inventory_2</mat-icon> Empaques </button>
+    <button mat-menu-item [routerLink]="['/admin/messages']">
+        <mat-icon>email</mat-icon> Mensajes </button>
+    <button mat-menu-item (click)="logoutHeader()">
+        <mat-icon>exit_to_app</mat-icon> Cerrar sesión </button>
+</mat-menu>

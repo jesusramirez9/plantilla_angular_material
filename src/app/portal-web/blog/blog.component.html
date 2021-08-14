@@ -1,0 +1,68 @@
+<div class="section_general">
+    <!-- BANNER ARTESANOS -->
+    <div class="banner banner_blog">
+        <h2><span>Nuestro Blog</span></h2>
+    </div>
+
+    <div class="content-blog">
+        <!-- BLOG 1 -->
+        <div class="blog1">
+            <h2 class="blog_h2 mb-4">Lo último en Piska...</h2>
+            <div class="row mx-0 blog_ultimos">
+                <div class="col-md-6 col-xl-7 px-0 blog1-slider">
+                    <div id="carouselExampleControls" class="carousel slide h-100" data-bs-ride="carousel" data-bs-pause=false>
+                        <div class="carousel-inner h-100">
+                            <div class="carousel-item active slider_item_blog" [style.backgroundImage]="'url(../../../../../assets/images/blog/blog-slider.jpg)'"></div>
+                            <div class="carousel-item slider_item_blog" [style.backgroundImage]="'url(../../../../../assets/images/blog/blog-slider.jpg)'"></div>
+                            <div class="carousel-item slider_item_blog" [style.backgroundImage]="'url(../../../../../assets/images/blog/blog-slider.jpg)'"></div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-md-6 col-xl-5 blog_ultimos_text">
+                    <p class="blog_fecha">10 de Mayo, 2021</p>
+                    <h2 class="blog_title">Realizamos los productos oficiales de Alianza Lima</h2>
+                    <p class="blog_text mb-4">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga possimus, tempora accusantium dolorum eveniet cumque sit at, deserunt ex, veniam a magni quos aliquid vitae deleniti quasi eligendi nemo beatae.</p>
+                    <div class="text-start">
+                        <a routerLink="/blog/1" mat-raised-button class="btn-dorado-p">VER NOTA</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- BLOG 2 -->
+        <div class="blog2">
+            <h2 class="blog_h2 mb-4">Actualidad <span>/ Casos de éxito</span></h2>
+            <div class="row">
+                <div class="col-lg-6 mb-4" *ngFor="let item of [1,2,3,4,5,6]">
+                    <div class="row mx-0 blog_ultimos">
+                        <div class="col-md-6 blog_item_img" [style.backgroundImage]="'url(../../../../../assets/images/blog/blog-small.jpg)'"></div>
+                        <div class="col-md-6 blog_item_text">
+                            <p class="blog_fecha">10 de Mayo, 2021</p>
+                            <h2 class="blog_title">Realizamos los productos oficiales de Alianza Lima</h2>
+                            <p class="blog_text mb-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga possimus, tempora accusantium dolorum eveniet cumque sit at, deserunt ex, veniam a magni quos aliquid vitae deleniti quasi eligendi nemo beatae.</p>
+                            <div class="text-start">
+                                <a routerLink="/blog/1" class="btn-link-dorado">VER NOTA</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <!-- PAGINADO -->
+            <div class="paginado">
+                
+            </div>
+        </div>
+        
+    </div>
+</div>

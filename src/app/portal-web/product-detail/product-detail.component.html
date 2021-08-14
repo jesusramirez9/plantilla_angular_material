@@ -1,0 +1,177 @@
+<div class="section_general">
+    <!-- BANNER ARTESANOS -->
+    <div class="banner banner_detalle">
+        <h2><span>Regalos Corporativos</span></h2>
+    </div>
+
+    <div class="content-detalle">
+        <!-- DETALLE 1 -->
+        <div class="detalle1">
+            <nav class="nav_bread" aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/regalosCorporativos">Regalos Corporativos</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">{{detalleProducto.name ? detalleProducto.name:''}}</li>
+                </ol>
+            </nav>
+            <div class="row">
+                <div class="d-md-none">
+                    <h2 class="product_title">{{detalleProducto.name ? detalleProducto.name:''}}</h2>
+                </div>
+                <div class="col-md-6 col-lg-7 row align-self-baseline">
+                    <div class="img_minis col-12 col-xl-auto order-1 order-xl-0">
+                        <button *ngFor="let img of listImagenes; let i = index" class="btn_img_mini active" [class.active]="i==activeImg" [style.backgroundImage]="'url('+img.imageName+')'" (click)="changeImg(i)"></button>
+                    </div>
+                    <div class="img_product_content col order-0 order-xl-1 mb-3">
+                        <div class="img_producto_bg"
+                            [style.backgroundImage]="'url('+linkImgPrincipal+')'"></div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-5 ps-md-4">
+                    <h2 class="product_title d-none d-md-block">{{detalleProducto.name ? detalleProducto.name:''}}</h2>
+                    <p class="product_description mt-4 mt-md-0">{{detalleProducto.nameDescription}}</p>
+
+                    <div class="row product_precio1">
+                        <div class="col-auto precio_product">
+                            <h2>S/&nbsp;{{detalleProducto.price | number: '1.1-2'}}</h2>
+                            <p class="mb-0">(Precio {{stockInfo.minQuantity}} unidades mínimo)</p>
+                        </div>
+                        <div class="col-auto">
+                            <button class="rango_precios">
+                                <div class="rango_img">
+                                    <img src="assets/images/detailProduct/rango.png" class="img-fluid">
+                                </div>
+                                <div class="rango_text">
+                                    Ver rango<br>de precios
+                                </div>
+                            </button>
+                        </div>
+                        <div class="col-auto">
+                            <div class="col_stock">
+                                <img src="assets/images/detailProduct/stock.png" class="img-fluid">
+                                <span>En stock</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex my-4 align-items-center">
+                        <div class="amount_cart">
+                            <div class="btn-group btn-group-lg" role="group">
+                                <button type="button" (click)="reduceAmount()" class="btn">-</button>
+                                <div class="btn">{{amountProduct}}</div>
+                                <button type="button" (click)="increaseAmount()" class="btn">+</button>
+                            </div>
+                        </div>
+                        <button mat-raised-button class="btn-dorado-p w-100 ms-3">AÑADIR AL CARRITO</button>
+                    </div>
+                    <div class="d-flex mb-3 opcion_producto">
+                        <div class="text-center">
+                            <img src="assets/images/detailProduct/delivery.png" class="img_delivery img-fluid">
+                        </div>
+                        <p class="d-inline-block mb-0">Delivery Disponible: <span>Perú</span></p>
+                    </div>
+                    <div class="d-flex mb-3 opcion_producto">
+                        <div class="text-center img_garantia">
+                            <img src="assets/images/detailProduct/garantia.png" class="img-fluid">
+                        </div>
+                        <p class="d-inline-block mb-0">Entrega garantizada</p>
+                    </div>
+
+                    <div class="text_cotizar text-center">
+                        <p class="product_description">¿Deseas personalizar el producto? Comunícate con nosotros, te
+                            responderemos a la brevedad.</p>
+                        <button mat-raised-button class="btn-dorado-p">COTIZAR</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- DETALLE 2 -->
+        <div class="detalle2 mb-5">
+            <div class="row">
+                <div class="col-md-6 col-lg-7 pe-md-4">
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="tab-description" data-bs-toggle="tab" data-bs-target="#description"
+                                type="button" role="tab" aria-controls="description" aria-selected="true">Descripción</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="tab-ficha" data-bs-toggle="tab" data-bs-target="#ficha"
+                                type="button" role="tab" aria-controls="ficha" aria-selected="false">Ficha Técnica</button>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade py-4 show active" id="description" role="tabpanel" aria-labelledby="tab-description">
+                            <p>{{detalleProducto.descriptionEs1}}</p>
+                            <p>{{detalleProducto.descriptionEs2}}</p>
+                            <p>{{detalleProducto.descriptionEs3}}</p>
+                        </div>
+                        <div class="tab-pane fade py-4" id="ficha" role="tabpanel" aria-labelledby="tab-ficha">
+                            <div class="row mb-3" *ngFor="let feature of listCaracteristicas">
+                                <div class="col-md-4 titulo_caract">
+                                    {{feature.question}}
+                                </div>
+                                <div class="col-md-8 detalle_caract">
+                                    {{feature.answer}}
+                                </div>
+                            </div>
+                            <div class="mt-4" *ngIf="false">
+                                <a href="" class="btn_download">DESCARGAR PDF</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-5 pe-md-4">
+                    <div class="opiniones_content">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h2 class="titulo_opiniones">Opiniones de Clientes</h2>
+                            </div>
+                            <div class="col-md-6 px-2">
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <div class="d-flex align-items-center">
+                                        <img src="assets/images/detailProduct/star_full.png" class="icon_start">
+                                        <img src="assets/images/detailProduct/star_full.png" class="icon_start">
+                                        <img src="assets/images/detailProduct/star_full.png" class="icon_start">
+                                        <img src="assets/images/detailProduct/star_semi.png" class="icon_start">
+                                        <img src="assets/images/detailProduct/star_empty.png" class="icon_start">
+                                    </div>
+                                    <span class="ms-2 d-md-none d-xl-inline">3.5 de 5</span>
+                                </div>
+                                <p class="text-center mt-1">35 opiniones en total</p>
+                            </div>
+                        </div>
+                        <h2 class="titulo_opiniones">Últimas reseñas</h2>
+                        <div class="item_opinion mb-3" *ngFor="let opinion of [1,2,3]">
+                            <div class="icon_person"><mat-icon>person</mat-icon></div>
+                            <div class="w-100 ms-3">
+                                <p class="fw-bold mb-2">Andrés Arias <span class="fw-normal ms-3">14 de abril, 2021</span></p>
+                                <div class="d-flex align-items-center mb-2">
+                                    <img src="assets/images/detailProduct/star_full.png" class="icon_start">
+                                    <img src="assets/images/detailProduct/star_full.png" class="icon_start">
+                                    <img src="assets/images/detailProduct/star_full.png" class="icon_start">
+                                    <img src="assets/images/detailProduct/star_semi.png" class="icon_start">
+                                    <img src="assets/images/detailProduct/star_empty.png" class="icon_start">
+                                </div>
+                                <p>Una hermosa pieza de artesanía. Llego en la fecha indicada y todo perfecto!!</p>
+                            </div>
+                        </div>
+                        <div class="paginado text-center">
+                            <button class="btn btn-pag active">1</button>
+                            <button class="btn btn-pag">2</button>
+                            <button class="btn btn-pag">3</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- DETALLE 3 -->
+        <div class="detalle3 pt-3" *ngIf="listRelacionados.length > 0">
+            <h2 class="title_similares">Productos Similares</h2>
+            <div class="row">
+                <div class="col-md-4 col-lg-3 mb-4" *ngFor="let item of listRelacionados">
+                    <app-product-catalogue [producto]="item"></app-product-catalogue>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

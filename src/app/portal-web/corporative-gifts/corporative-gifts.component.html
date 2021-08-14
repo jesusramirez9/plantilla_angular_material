@@ -1,0 +1,115 @@
+<div class="section_general">
+    <!-- BANNER ARTESANOS -->
+    <div class="banner banner_regalos">
+        <h2><span>Regalos Corporativos</span></h2>
+    </div>
+
+    <div class="content-regalos">
+        <!-- REGALOS 1 -->
+        <div class="regalos1">
+            <div class="row mx-0">
+                <div class="col-md-7 col-lg-6 col-xl-7 pe-md-4 regalos1_text mb-3 mb-md-0 pt-md-3">
+                    <h2>Regalos únicos y especiales</h2>
+                    <p>Contamos con 40 años de experiencia brindando nuestros servicios de artesanía peruana decorativa a los 5 continentes, ofreciendo piezas únicas hechas a mano, donde cada una de ellas cuentan su propia historia y tienen un significado especial.</p>
+                </div>
+                <div class="col-md-5 col-lg-6 col-xl-5">
+                    <div class="regalos1_icons row row-cols-2 row-cols-sm-4 row-cols-md-2 row-cols-lg-4">
+                        <div class="col text-center mb-3 mb-sm-0 mb-md-3 mb-lg-0">
+                            <img src="../../../assets/images/corporativeGifts/calidad_exportacion.png" alt="">
+                            <p class="text-center mb-0">Calidad de<br>Exportación</p>
+                        </div>
+                        <div class="col text-center mb-3 mb-sm-0 mb-md-3 mb-lg-0">
+                            <img src="../../../assets/images/corporativeGifts/desarrollo_producto.png" alt="">
+                            <p class="text-center mb-0">Desarrollo&nbsp;de<br>Producto</p>
+                        </div>
+                        <div class="col text-center">
+                            <img src="../../../assets/images/corporativeGifts/capacidad_produccion.png" alt="">
+                            <p class="text-center mb-0">Capacidad&nbsp;de<br>Producción</p>
+                        </div>
+                        <div class="col text-center">
+                            <img src="../../../assets/images/corporativeGifts/precios_por_mayor.png" alt="">
+                            <p class="text-center mb-0">Precios al<br>por mayor</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- REGALOS 2 -->
+        <div class="regalos2">
+            <div class="row mx-0">
+                <div class="col-md-4 col-lg-3 pe-md-4 mb-4">
+                    <div class="mb-4 lista_filtros">
+                        <p>Categorías de Productos</p>
+                        <ul class="ps-0">
+                            <!-- <li><a href="" class="d-block" *ngFor="let item of listFilstrosCategory">{{item.name}}</a></li> -->
+                            <li *ngFor="let item of listFilstrosCategory; let i = index;">
+                                <mat-checkbox (change)="changeState($event, i)">
+                                  {{item.name}}
+                                </mat-checkbox>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mb-4 lista_filtros">
+                        <p>Ordenar</p>
+                        <ul class="ps-0">
+                            <li><a href="" class="d-block">Precio: menor a mayor</a></li>
+                            <li><a href="" class="d-block">Precio: mayor a menor</a></li>
+                            <li><a href="" class="d-block">Alfabéticamente: A - Z</a></li>
+                            <li><a href="" class="d-block">Alfabéticamente: Z - A</a></li>
+                            <li><a href="" class="d-block">Fecha: reciente a antiguo</a></li>
+                            <li><a href="" class="d-block">Fecha: antiguo a reciente</a></li>
+                        </ul>
+                    </div>
+                    <div class="mb-4 lista_filtros">
+                        <button mat-raised-button class="btn-dorado-p w-100" (click)="applyFilters()">Aplicar Filtros</button>
+                    </div>
+                </div>
+                <div class="col-md-8 col-lg-9 px-0">
+                    <div class="row mx-0">
+                        <div class="col-md-6 col-lg-4 mb-5 item_producto" *ngFor="let item of listProducts">
+                            <a href="/regalosCorporativos/{{item.id}}" class="d-block">
+                                <div class="img-product" [style.backgroundImage]="'url(assets/images/corporativeGifts/producto01.jpg)'"></div>
+                                <div class="name-product text-center">
+                                    <h2>{{item.name}}</h2>
+                                    <h3><span class="pe-2">S/</span>{{item.price | number: '1.1-2'}}</h3>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="producto_paginado px-4" *ngIf="false">
+                        <nav class="">
+                            <ul class="pagination justify-content-end mb-0">
+                                <li class="page-item active" aria-current="page">
+                                    <a class="page-link" href="#">1</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">2</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">3</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- REGALOS 3 -->
+        <div class="regalos3">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h2>Regalos Corporativos<br><span>Personalizados</span></h2>
+                </div>
+                <div class="col-lg-6 pt-md-2">
+                    <p>Si deseas personalizar nuestros productos con tu logotipo, colores corporativos o realizar una idea que tienes en mente, no dudes en comunicarte con nosotros.</p>
+                </div>
+                <div class="col-12 pt-3">
+                    <a routerLink="/contactenos" mat-raised-button href="" class="btn-dorado-p">ESCRÍBENOS</a>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>

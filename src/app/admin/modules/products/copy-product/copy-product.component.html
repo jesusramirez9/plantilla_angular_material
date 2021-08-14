@@ -1,0 +1,342 @@
+<mat-card class="example-card shadow-none">
+    <mat-card-content>
+        <h2 class="title-addproduct">Editar un producto</h2>
+        <br>
+        <!-- Informacion general -->
+        <div class="info-general">
+            <form>
+                <p class="text-warning mb-5 subtitle-addproduct">Caraterísticas del producto</p>
+                <div class="row mb-4">
+                    <div class="col-12">
+                        <label class="fw-bolder form-label">Nombre:</label>
+                        <input type="text" class="form-control" value="Tazas de barro artesanales de la región de Puno.">
+                    </div>
+                </div>
+                <div class="row mb-4">
+                    <div class="col-md-4">
+                        <label class="fw-bolder form-label">Código:</label>
+                        <input type="text" class="form-control" value="PCOD001">
+                    </div>
+                    <div class="col-md-4">
+                        <label class="fw-bolder mb-2">Color:</label>
+                        <mat-form-field appearance="legacy" floatLabel="never" class="select-custom">
+                            <mat-select value="1" [disableOptionCentering]="true">
+                                <mat-option value="1">Azul</mat-option>
+                                <mat-option value="2">Dorado</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row mb-4">
+                    <div class="col-md-4">
+                        <label class="fw-bolder mb-2">Categoría:</label>
+                        <mat-form-field appearance="legacy" floatLabel="never" class="select-custom">
+                            <mat-select value="Artesanía" [disableOptionCentering]="true">
+                                <mat-option value="Artesanía">Artesanía</mat-option>
+                                <mat-option value="Decoración">Decoración</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="fw-bolder mb-2">Festividad:</label>
+                        <mat-form-field appearance="legacy" floatLabel="never" class="select-custom">
+                            <mat-select value="Cumpleaños" [disableOptionCentering]="true">
+                                <mat-option value="Cumpleaños">Cumpleaños</mat-option>
+                                <mat-option value="Aniversario">Aniversario</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="fw-bolder mb-2">Tipo de producto:</label>
+                        <mat-form-field appearance="legacy" floatLabel="never" class="select-custom">
+                            <mat-select value="Personalizado" [disableOptionCentering]="true">
+                                <mat-option value="Personalizado">Personalizado</mat-option>
+                                <mat-option value="Normal">Normal</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row mb-4">
+                    <div class="col-md-6">
+                        <label class="fw-bolder form-label">Descripción 1:</label>
+                        <textarea name="" class="form-control"
+                            rows="4">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</textarea>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="fw-bolder form-label">Descripción 2:</label>
+                        <textarea name="" class="form-control"
+                            rows="4">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</textarea>
+                    </div>
+                </div>
+                <div class="row mb-5">
+                    <div class="col-12">
+                        <label class="fw-bolder form-label">Historia del producto:</label>
+                        <textarea name="" class="form-control"
+                            rows="4">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</textarea>
+                    </div>
+                </div>
+                <div class="row mb-4">
+                    <div class="col-12">
+                        <p class="fw-bolder">Adjuntar pdf:</p>
+                        <p>Debe ser un archivo .pdf de 10MB como máximo.</p>
+                        <div class="mb-3">
+                            <button type="button" mat-stroked-button color="primary">Ver archivo adjunto</button>
+                            <button type="button" mat-stroked-button color="accent" class="ms-3">Eliminar
+                                archivo</button>
+                        </div>
+
+                        <div class="form-group col-md-3">
+                            <label>Reemplazar archivo</label>
+                            <input type="file" class="form-control">
+                        </div>
+                        <div class="pt-5">
+                            <button type="submit" mat-raised-button color="primary">Guardar datos e ir a cargar
+                                imágenes</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <!-- Imagenes y video -->
+        <div class="imagenes-video">
+            <form>
+                <br><br>
+                <p class="text-warning mb-5 subtitle-addproduct">Imágenes del producto</p>
+                <div class="py-4">
+                    <p class="fw-bolder">Adjuntar imágenes</p>
+                    <p>Debe ser un archivo .jpg, .gif o .png de 10MB como máximo y de al menos 400 por 400 píxeles.</p>
+                </div>
+                <div class="row mb-4">
+                    <div class="col-12">
+                        <label class="fw-bolder mb-3">Imagen principal:</label>
+                    </div>
+                    <div class="col-md-6 row mx-0">
+                        <div class="col-img-preview pb-3">
+                            <div class="img-preview mx-auto mb-2"
+                                style="background-image: url(https://material.angular.io/assets/img/examples/shiba2.jpg);">
+                            </div>
+                            <button mat-raised-button color="accent">Eliminar archivo</button>
+                        </div>
+                        <div class="col-img-input pb-3">
+                            <app-input-file (changeImage)="changeImagen($event)"></app-input-file>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-4">
+                    <div class="col-12">
+                        <p class="fw-bolder mb-3 pt-4">Imágenes secundarias:</p>
+                    </div>
+                    <div class="col-md-6 row mx-0">
+                        <div class="col-img-preview pb-3">
+                            <div class="img-preview mx-auto mb-2"
+                                style="background-image: url(https://material.angular.io/assets/img/examples/shiba2.jpg);">
+                            </div>
+                            <button mat-raised-button color="accent">Eliminar archivo</button>
+                        </div>
+                        <div class="col-img-input pb-3">
+                            <app-input-file (changeImage)="changeImagen($event)"></app-input-file>
+                        </div>
+                    </div>
+                    <div class="col-md-6 row mx-0">
+                        <div class="col-img-preview pb-3">
+                            <div class="img-preview mx-auto mb-2"
+                                style="background-image: url(https://material.angular.io/assets/img/examples/shiba2.jpg);">
+                            </div>
+                            <button mat-raised-button color="accent">Eliminar archivo</button>
+                        </div>
+                        <div class="col-img-input pb-3">
+                            <app-input-file (changeImage)="changeImagen($event)"></app-input-file>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-4">
+                    <div class="col-md-6 row mx-0">
+                        <div class="col-img-preview pb-3">
+                            <div class="img-preview mx-auto mb-2"
+                                style="background-image: url(https://material.angular.io/assets/img/examples/shiba2.jpg);">
+                            </div>
+                            <button mat-raised-button color="accent">Eliminar archivo</button>
+                        </div>
+                        <div class="col-img-input pb-3">
+                            <app-input-file (changeImage)="changeImagen($event)"></app-input-file>
+                        </div>
+                    </div>
+                    <div class="col-md-6 row mx-0">
+                        <div class="col-img-preview pb-3">
+                            <div class="img-preview mx-auto mb-2"
+                                style="background-image: url(https://material.angular.io/assets/img/examples/shiba2.jpg);">
+                            </div>
+                            <button mat-raised-button color="accent">Eliminar archivo</button>
+                        </div>
+                        <div class="col-img-input pb-3">
+                            <app-input-file (changeImage)="changeImagen($event)"></app-input-file>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-4">
+                    <div class="col-md-6 row mx-0">
+                        <div class="col-img-preview pb-3">
+                            <div class="img-preview mx-auto mb-2"
+                                style="background-image: url(https://material.angular.io/assets/img/examples/shiba2.jpg);">
+                            </div>
+                            <button mat-raised-button color="accent">Eliminar archivo</button>
+                        </div>
+                        <div class="col-img-input pb-3">
+                            <app-input-file (changeImage)="changeImagen($event)"></app-input-file>
+                        </div>
+                    </div>
+                    <div class="col-md-6 row mx-0">
+                        <div class="col-img-preview pb-3">
+                            <div class="img-preview mx-auto mb-2"
+                                style="background-image: url(https://material.angular.io/assets/img/examples/shiba2.jpg);">
+                            </div>
+                            <button mat-raised-button color="accent">Eliminar archivo</button>
+                        </div>
+                        <div class="col-img-input pb-3">
+                            <app-input-file (changeImage)="changeImagen($event)"></app-input-file>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-4">
+                    <div class="col-md-6 row mx-0">
+                        <div class="col-img-preview pb-3">
+                            <div class="img-preview mx-auto mb-2"
+                                style="background-image: url(https://material.angular.io/assets/img/examples/shiba2.jpg);">
+                            </div>
+                            <button mat-raised-button color="accent">Eliminar archivo</button>
+                        </div>
+                        <div class="col-img-input pb-3">
+                            <app-input-file (changeImage)="changeImagen($event)"></app-input-file>
+                        </div>
+                    </div>
+                    <div class="col-md-6 row mx-0">
+                        <div class="col-img-preview pb-3">
+                            <div class="img-preview mx-auto mb-2"
+                                style="background-image: url(https://material.angular.io/assets/img/examples/shiba2.jpg);">
+                            </div>
+                            <button mat-raised-button color="accent">Eliminar archivo</button>
+                        </div>
+                        <div class="col-img-input pb-3">
+                            <app-input-file (changeImage)="changeImagen($event)"></app-input-file>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-4">
+                    <div class="col-md-6 row mx-0">
+                        <div class="col-img-preview pb-3">
+                            <div class="img-preview mx-auto mb-2"
+                                style="background-image: url(https://material.angular.io/assets/img/examples/shiba2.jpg);">
+                            </div>
+                            <button mat-raised-button color="accent">Eliminar archivo</button>
+                        </div>
+                        <div class="col-img-input pb-3">
+                            <app-input-file (changeImage)="changeImagen($event)"></app-input-file>
+                        </div>
+                    </div>
+                    <div class="col-md-6 row mx-0">
+                        <div class="col-img-preview pb-3">
+                            <div class="img-preview mx-auto mb-2"
+                                style="background-image: url(https://material.angular.io/assets/img/examples/shiba2.jpg);">
+                            </div>
+                            <button mat-raised-button color="accent">Eliminar archivo</button>
+                        </div>
+                        <div class="col-img-input pb-3">
+                            <app-input-file (changeImage)="changeImagen($event)"></app-input-file>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mb-4">
+                    <div class="col-12 col-md-6 col-lg-5">
+                        <label class="fw-bolder mb-2">Video:</label>
+                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/fzVpWco2qZk"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="row mb-4">
+                    <div class="col-12">
+                        <label class="fw-bolder mb-2">URL de video:</label>
+                        <input type="url" class="form-control" value="https://www.youtube.com/">
+                    </div>
+                </div>
+                <br>
+                <h3 class="text-warning mt-4 subtitle-addproduct">Imagen de empaque para producto</h3>
+                <div class="pt-4 mb-5">
+                    <p class="fw-bolder">Tendrá empaque de cortesía:</p>
+                    <div>
+                        <span class="pe-2">No</span>
+                        <mat-slide-toggle color="primary">Si</mat-slide-toggle>
+                    </div>
+                </div>
+                <div class="row mb-4">
+                    <div class="col-md-4 col-lg-3">
+                        <label class="fw-bolder mb-2">Elegir empaque:</label>
+                        <mat-form-field appearance="legacy" floatLabel="never" class="select-custom">
+                            <mat-select value="1" [disableOptionCentering]="true">
+                                <mat-option value="1">Empaque de regalo especial</mat-option>
+                                <mat-option value="2">Empaque de aniversario</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="pt-4 mb-5">
+                    <button type="submit" mat-raised-button color="primary">Guardar datos y cargar datos para
+                        venta</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Datos para venta -->
+        <div class="datos-venta">
+            <form>
+                <p class="text-warning mb-5 subtitle-addproduct">Datos para venta del producto</p>
+                <div class="row mb-4">
+                    <div class="col-auto">
+                        <label class="fw-bolder form-label">Términos de pago</label>
+                        <div>
+                            <section class="example-section">
+                                <mat-checkbox color="primary" class="example-margin me-5">50% adelantado</mat-checkbox>
+                                <mat-checkbox color="primary" class="example-margin me-5">100% adelantado</mat-checkbox>
+                                <mat-checkbox color="primary" class="example-margin me-5">Personalizado</mat-checkbox>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+                <p class="fw-bolder pt-3">Precio de producto</p>
+                <div class="row" *ngFor="let item of [1,2,3]">
+                    <div class="col-sm-3 col-xl-auto">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Cantidad mínima</mat-label>
+                            <input type="number" matInput autocomplete="off">
+                        </mat-form-field>
+                    </div>
+                    <div class="col-sm-3 col-xl-auto">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Cantidad máxima</mat-label>
+                            <input type="number" matInput autocomplete="off">
+                        </mat-form-field>
+                    </div>
+                    <div class="col-sm-3 col-xl-auto">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Precio</mat-label>
+                            <input type="number" matInput autocomplete="off">
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="mb-5">
+                    <button mat-button color="primary">Agregar más precios</button>
+                </div>
+                <div class="col-12">
+                    <button type="submit" mat-raised-button color="primary">Guardar datos y finalizar carga</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="pt-4 text-center">
+            <a [routerLink]="['/admin/product']"  mat-button class="bg-light">Regresar</a>
+        </div>
+    </mat-card-content>
+</mat-card>
